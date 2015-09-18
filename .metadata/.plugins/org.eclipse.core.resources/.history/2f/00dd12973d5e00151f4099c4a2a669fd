@@ -213,7 +213,8 @@ public class ColorPickerGui {
 					
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						setColor(Color.GREEN);				
+						setColor(Color.GREEN);
+						
 					}
 				});
 		        
@@ -222,10 +223,8 @@ public class ColorPickerGui {
 					@Override
 					public void colorChanged(Color c) {
 						if(c == Color.GREEN) {
-							green.setSelected(true);
+							
 						
-						}else{
-							green.setSelected(false);
 						}
 					}
 				});
@@ -243,10 +242,8 @@ public class ColorPickerGui {
 					@Override
 					public void colorChanged(Color c) {
 						if(c == Color.BLUE) {
-							blue.setSelected(true);
+							
 						
-						}else{
-							blue.setSelected(false);
 						}
 					}
 				});
@@ -264,14 +261,11 @@ public class ColorPickerGui {
 			@Override
 			public void colorChanged(Color c) {
 				if(c == Color.CYAN) {
-					cyan.setSelected(true);
+					
 				
-				}else{
-					cyan.setSelected(false);
 				}
 			}
 		});
-        
 		magenta.addActionListener(new ActionListener(){
 					
 					@Override
@@ -287,31 +281,7 @@ public class ColorPickerGui {
 					@Override
 					public void colorChanged(Color c) {
 						if(c == Color.MAGENTA) {
-							magenta.setSelected(true);
-						}else{
-							magenta.setSelected(false);
-						}
-					}
-				});
-		        
-		        yellow.addActionListener(new ActionListener(){
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						if(yellow.isSelected()){
-						setColor(Color.YELLOW);
-						}
-					}
-				});
-		        
-		        listeners.add(new ColorListener() {
-					
-					@Override
-					public void colorChanged(Color c) {
-						if(c == Color.YELLOW) {
-							yellow.setSelected(true);
-						}else{
-							yellow.setSelected(false);
+						
 						}
 					}
 				});

@@ -271,7 +271,6 @@ public class ColorPickerGui {
 				}
 			}
 		});
-        
 		magenta.addActionListener(new ActionListener(){
 					
 					@Override
@@ -290,28 +289,6 @@ public class ColorPickerGui {
 							magenta.setSelected(true);
 						}else{
 							magenta.setSelected(false);
-						}
-					}
-				});
-		        
-		        yellow.addActionListener(new ActionListener(){
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						if(yellow.isSelected()){
-						setColor(Color.YELLOW);
-						}
-					}
-				});
-		        
-		        listeners.add(new ColorListener() {
-					
-					@Override
-					public void colorChanged(Color c) {
-						if(c == Color.YELLOW) {
-							yellow.setSelected(true);
-						}else{
-							yellow.setSelected(false);
 						}
 					}
 				});

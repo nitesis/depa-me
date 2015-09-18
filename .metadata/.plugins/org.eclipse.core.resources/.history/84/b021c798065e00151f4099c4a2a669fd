@@ -4,7 +4,6 @@ package components;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Hashtable;
-import java.util.LinkedList;
 
 import javax.swing.*;
 import javax.swing.colorchooser.AbstractColorChooserPanel;
@@ -34,10 +33,6 @@ public class ColorPickerGui {
     private JRadioButton red, green, blue, cyan, magenta, yellow;
     private JButton brighter, darker;
     private JPanel colorPanel;
-    
-    private Color color;
-    private LinkedList<ColorListener> listeners = new LinkedList<>();
-    
     
 	public static void main(String[] args) {
         //Schedule a job for the event-dispatching thread:
@@ -187,197 +182,19 @@ public class ColorPickerGui {
         magenta = new JRadioButton("Magenta");
         yellow = new JRadioButton("Yellow");
         
-        //Eventhandling for radiobuttons
-        red.addActionListener(new ActionListener(){
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				setColor(Color.RED);
-				
-			}
-		});
         
-        listeners.add(new ColorListener() {
-			
-			@Override
-			public void colorChanged(Color c) {
-				if(c == Color.RED) {
-					red.setSelected(true);
-				}else{
-					red.setSelected(false);
-				}
-			}
-		});
-        
-		green.addActionListener(new ActionListener(){
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						setColor(Color.GREEN);				
-					}
-				});
-		        
-		        listeners.add(new ColorListener() {
-					
-					@Override
-					public void colorChanged(Color c) {
-						if(c == Color.GREEN) {
-							green.setSelected(true);
-						
-						}else{
-							green.setSelected(false);
-						}
-					}
-				});
-		 blue.addActionListener(new ActionListener(){
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						setColor(Color.BLUE);
-						
-					}
-				});
-		        
-		        listeners.add(new ColorListener() {
-					
-					@Override
-					public void colorChanged(Color c) {
-						if(c == Color.BLUE) {
-							blue.setSelected(true);
-						
-						}else{
-							blue.setSelected(false);
-						}
-					}
-				});
-        cyan.addActionListener(new ActionListener(){
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				setColor(Color.CYAN);
-				
-			}
-		});
-        
-        listeners.add(new ColorListener() {
-			
-			@Override
-			public void colorChanged(Color c) {
-				if(c == Color.CYAN) {
-					cyan.setSelected(true);
-				
-				}else{
-					cyan.setSelected(false);
-				}
-			}
-		});
-        
-		magenta.addActionListener(new ActionListener(){
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						if(magenta.isSelected()){
-						setColor(Color.MAGENTA);
-						}
-					}
-				});
-		        
-		        listeners.add(new ColorListener() {
-					
-					@Override
-					public void colorChanged(Color c) {
-						if(c == Color.MAGENTA) {
-							magenta.setSelected(true);
-						}else{
-							magenta.setSelected(false);
-						}
-					}
-				});
-		        
-		        yellow.addActionListener(new ActionListener(){
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						if(yellow.isSelected()){
-						setColor(Color.YELLOW);
-						}
-					}
-				});
-		        
-		        listeners.add(new ColorListener() {
-					
-					@Override
-					public void colorChanged(Color c) {
-						if(c == Color.YELLOW) {
-							yellow.setSelected(true);
-						}else{
-							yellow.setSelected(false);
-						}
-					}
-				});
         //Create two buttons
         brighter = new JButton("Brighter");
-        brighter.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-        
-        listeners.add(new ColorListener() {
-			
-			@Override
-			public void colorChanged(Color c) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-        
-        
         darker = new JButton(" Darker ");
-        darker.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				Color temp = color;
-				temp.darker();
-				setColor(temp);
-				
-			}
-		});
-        
-        listeners.add(new ColorListener() {
-			
-			@Override
-			public void colorChanged(Color c) {
-				// TODO Auto-generated method st
-				// darker.setEnabled(false);
-				
-			}
-		});
         
         //Create color panel
         colorPanel = new JPanel();
-        colorPanel.setBackground(color);
+        colorPanel.setBackground(new Color(232, 95, 164));
         colorPanel.setPreferredSize(new Dimension(200, 200));
-        listeners.add(new ColorListener() {
-			
-			@Override
-			public void colorChanged(Color c) {
-				colorPanel.setBackground(c);
-					
-				
-				}
-			
-		});
         
         
 	}
-    
-    
+
     private JPanel layoutComponents() {
 		JPanel panel = new JPanel();
         panel.setLayout(new MigLayout(
@@ -408,60 +225,6 @@ public class ColorPickerGui {
 		return panel;
 	}
     
-    /**
-     * Handle events 
-     */
     
     
-    
-//    public void init() {
-//          // new jpanel bla
-//         
-//          // panel
-//          listeners.add(new ColorListener() {
-//               
-//                @Override
-//                public void colorChanged(Color c) {
-//                      bla.setBackgroundcolro(c);
-//                     
-//                }
-//          });
-//         
-//          // radio Buttons
-//          listeners.add(new ColorListener() {
-//                @Override
-//                public void colorChanged(Color c) {
-//                      if (c == Color.RED) {
-//                            radiobuttons.select Red
-//                      }
-//                     
-//                }
-//          });
-//         
-//          // balken für grün
-//                      listeners.add(new ColorListener() {
-//                            @Override
-//                            public void colorChanged(Color c) {
-//                                  balken setpostion anteil grün
-//                      }
-//                     
-//                }
-//          });
-//    }
-
-	
-	
-	public void setColor(Color c) {
-		color = c;
-	   
-	    for (ColorListener l : listeners) {
-	          l.colorChanged(c);
-	    }
-	   
-	    
-	    
-	}
-	public interface ColorListener {
-        public void colorChanged(Color c);
-  }
 }
