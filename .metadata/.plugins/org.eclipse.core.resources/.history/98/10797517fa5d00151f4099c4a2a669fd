@@ -190,7 +190,7 @@ public class ColorPickerGui {
         //Create color panel
         colorPanel = new JPanel();
         colorPanel.setBackground(new Color(232, 95, 164));
-        colorPanel.setPreferredSize(new Dimension(200, 200));
+        colorPanel.setPreferredSize(new Dimension(400, 400));
         
         
 	}

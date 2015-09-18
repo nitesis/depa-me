@@ -190,7 +190,6 @@ public class ColorPickerGui {
         //Create color panel
         colorPanel = new JPanel();
         colorPanel.setBackground(new Color(232, 95, 164));
-        colorPanel.setPreferredSize(new Dimension(200, 200));
         
         
 	}
@@ -218,10 +217,9 @@ public class ColorPickerGui {
         panel.add(cyan);
         panel.add(magenta);
         panel.add(yellow);
-        panel.add(colorPanel, "wrap");
-        panel.add(brighter);
+        panel.add(brighter, "wrap");
         panel.add(darker, "span 1 2"); 
-        
+        panel.add(colorPanel);
 		return panel;
 	}
     

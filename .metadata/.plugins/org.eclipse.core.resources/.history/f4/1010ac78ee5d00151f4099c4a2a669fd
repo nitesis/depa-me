@@ -7,10 +7,11 @@ import java.util.Hashtable;
 
 import javax.swing.*;
 import javax.swing.colorchooser.AbstractColorChooserPanel;
+import javax.swing.event.ChangeListener;
 
 import net.miginfocom.swing.MigLayout;
  
-public class ColorPickerGui {
+public abstract class ColorPickerGui implements ChangeListener {
     /**
      * Create the GUI and show it.  For thread safety,
      * this method should be invoked from the
@@ -32,7 +33,6 @@ public class ColorPickerGui {
     private JLabel bgLabel;
     private JRadioButton red, green, blue, cyan, magenta, yellow;
     private JButton brighter, darker;
-    private JPanel colorPanel;
     
 	public static void main(String[] args) {
         //Schedule a job for the event-dispatching thread:
@@ -113,26 +113,6 @@ public class ColorPickerGui {
         group.add(rbMenuItem);
         menu2.add(rbMenuItem);
         
-        rbMenuItem = new JRadioButtonMenuItem("Blue");
-        rbMenuItem.setMnemonic(KeyEvent.VK_O);
-        group.add(rbMenuItem);
-        menu2.add(rbMenuItem);
-        
-        rbMenuItem = new JRadioButtonMenuItem("Cyan");
-        rbMenuItem.setMnemonic(KeyEvent.VK_O);
-        group.add(rbMenuItem);
-        menu2.add(rbMenuItem);
-        
-        rbMenuItem = new JRadioButtonMenuItem("Magenta");
-        rbMenuItem.setMnemonic(KeyEvent.VK_O);
-        group.add(rbMenuItem);
-        menu2.add(rbMenuItem);
-        
-        rbMenuItem = new JRadioButtonMenuItem("Yellow");
-        rbMenuItem.setMnemonic(KeyEvent.VK_O);
-        group.add(rbMenuItem);
-        menu2.add(rbMenuItem);
-        
  //Create a pink label to put in the content pane.
         
         bgLabel.setOpaque(true);
@@ -144,7 +124,8 @@ public class ColorPickerGui {
         redSlider.setOpaque(true);
         redSlider.setBackground(Color.RED);
         redSlider.setPaintLabels(true);//das macht nix!
-        //redSlider.addChangeListener(this);
+        redSlider.addChangeListener(this);
+        redSlider.setMajorTickSpacing(10);
         redSlider.setPaintTicks(true);
         
         greenSlider = new JSlider(0, 255);
@@ -157,14 +138,10 @@ public class ColorPickerGui {
         
       //Create the label table
         Hashtable labelTable = new Hashtable();
-        labelTable.put( new Integer( 0 ), new JLabel("0") );
-        labelTable.put( new Integer( 255 ), new JLabel("255") );
-        redSlider.setLabelTable( labelTable );
-        redSlider.setPaintLabels(true);
-        greenSlider.setLabelTable( labelTable );
-        greenSlider.setPaintLabels(true);
-        blueSlider.setLabelTable( labelTable );
-        blueSlider.setPaintLabels(true);
+        labelTable.put( new Integer( 0 ), new JLabel("Start") );
+        labelTable.put( new Integer( 255 ), new JLabel("End") );
+        
+        
         
         //Create six textfields
         redValue = new JTextField(3);
@@ -186,12 +163,6 @@ public class ColorPickerGui {
         //Create two buttons
         brighter = new JButton("Brighter");
         darker = new JButton(" Darker ");
-        
-        //Create color panel
-        colorPanel = new JPanel();
-        colorPanel.setBackground(new Color(232, 95, 164));
-        colorPanel.setPreferredSize(new Dimension(200, 200));
-        
         
 	}
 
@@ -218,10 +189,8 @@ public class ColorPickerGui {
         panel.add(cyan);
         panel.add(magenta);
         panel.add(yellow);
-        panel.add(colorPanel, "wrap");
-        panel.add(brighter);
-        panel.add(darker, "span 1 2"); 
-        
+        panel.add(brighter, "wrap");
+        panel.add(darker, "span 1 2");        
 		return panel;
 	}
     

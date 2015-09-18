@@ -32,7 +32,6 @@ public class ColorPickerGui {
     private JLabel bgLabel;
     private JRadioButton red, green, blue, cyan, magenta, yellow;
     private JButton brighter, darker;
-    private JPanel colorPanel;
     
 	public static void main(String[] args) {
         //Schedule a job for the event-dispatching thread:
@@ -187,12 +186,6 @@ public class ColorPickerGui {
         brighter = new JButton("Brighter");
         darker = new JButton(" Darker ");
         
-        //Create color panel
-        colorPanel = new JPanel();
-        colorPanel.setBackground(new Color(232, 95, 164));
-        colorPanel.setPreferredSize(new Dimension(200, 200));
-        
-        
 	}
 
     private JPanel layoutComponents() {
@@ -218,10 +211,8 @@ public class ColorPickerGui {
         panel.add(cyan);
         panel.add(magenta);
         panel.add(yellow);
-        panel.add(colorPanel, "wrap");
-        panel.add(brighter);
-        panel.add(darker, "span 1 2"); 
-        
+        panel.add(brighter, "wrap");
+        panel.add(darker, "span 1 2");        
 		return panel;
 	}
     
