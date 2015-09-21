@@ -2,4 +2,10 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="net.miginfocom.swing.MigLayout"/>
 <fullyQualifiedTypeName name="javax.swing.colorchooser.AbstractColorChooserPanel"/>
+<fullyQualifiedTypeName name="java.util.Hashtable"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="components.ColorPickerGui.ColorListener"/>
+<fullyQualifiedTypeName name="javax.swing.event.ChangeListener"/>
+<fullyQualifiedTypeName name="javax.swing.event.ChangeEvent"/>
 </qualifiedTypeNameHistroy>
