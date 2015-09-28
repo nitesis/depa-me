@@ -8,4 +8,10 @@
 <fullyQualifiedTypeName name="components.ColorPickerGui.ColorListener"/>
 <fullyQualifiedTypeName name="javax.swing.event.ChangeListener"/>
 <fullyQualifiedTypeName name="javax.swing.event.ChangeEvent"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="jdraw.framework.FigureListener"/>
+<fullyQualifiedTypeName name="jdraw.framework.DrawModelEvent"/>
+<fullyQualifiedTypeName name="jdraw.framework.DrawModelEvent.Type"/>
 </qualifiedTypeNameHistroy>
