@@ -14,4 +14,7 @@
 <fullyQualifiedTypeName name="jdraw.framework.FigureListener"/>
 <fullyQualifiedTypeName name="jdraw.framework.DrawModelEvent"/>
 <fullyQualifiedTypeName name="jdraw.framework.DrawModelEvent.Type"/>
+<fullyQualifiedTypeName name="java.awt.Rectangle"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="java.awt.geom.Line2D.Double"/>
 </qualifiedTypeNameHistroy>

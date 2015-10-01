@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="DrawModelTest (1)" project="jdraw-assignment-XXX" tests="14" started="14" failures="0" errors="0" ignored="0">
+  <testsuite name="jdraw.test.DrawModelTest" time="0.001">
+    <testcase name="testAddFigure1" classname="jdraw.test.DrawModelTest" time="0.001"/>
+    <testcase name="testAddFigure2" classname="jdraw.test.DrawModelTest" time="0.0"/>
+    <testcase name="testAddFigure3" classname="jdraw.test.DrawModelTest" time="0.0"/>
+    <testcase name="testAddFigure4" classname="jdraw.test.DrawModelTest" time="0.0"/>
+    <testcase name="testAddFigure5" classname="jdraw.test.DrawModelTest" time="0.0"/>
+    <testcase name="testAddFigure6" classname="jdraw.test.DrawModelTest" time="0.0"/>
+    <testcase name="testRemoveFigure1" classname="jdraw.test.DrawModelTest" time="0.0"/>
+    <testcase name="testRemoveFigure2" classname="jdraw.test.DrawModelTest" time="0.0"/>
+    <testcase name="testRemoveFigure3" classname="jdraw.test.DrawModelTest" time="0.0"/>
+    <testcase name="testRemoveAllFigures1" classname="jdraw.test.DrawModelTest" time="0.0"/>
+    <testcase name="testRemoveAllFigures2" classname="jdraw.test.DrawModelTest" time="0.0"/>
+    <testcase name="testSetFigureIndex1" classname="jdraw.test.DrawModelTest" time="0.0"/>
+    <testcase name="testSetFigureIndex2" classname="jdraw.test.DrawModelTest" time="0.0"/>
+    <testcase name="testSetFigureIndex3" classname="jdraw.test.DrawModelTest" time="0.0"/>
+  </testsuite>
+</testrun>
