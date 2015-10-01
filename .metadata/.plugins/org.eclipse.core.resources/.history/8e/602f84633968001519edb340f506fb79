@@ -27,24 +27,20 @@ public class Line implements Figure {
 	@Override
 	public void draw(Graphics g) {
 		g.setColor(Color.BLACK);
-		//Ist das hier eine gute Idee mit dem Casten?
 		g.drawLine((int)line.getX1(), (int)line.getY1(), (int)line.getX2(), (int)line.getY2());
 		
 	}
 
 	@Override
 	public void move(int dx, int dy) {
-		if(dx != 0 || dy != 0) {
-			line.setLine(line.getX1() + dx, line.getY1() + dy, line.getX2() + dx, line.getY2() + dy);
-			// TODO notification of change
-			update(new FigureEvent(this));
-			}	
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public boolean contains(int x, int y) {
-		return line.contains(x, y);
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	@Override
@@ -55,7 +51,8 @@ public class Line implements Figure {
 
 	@Override
 	public Rectangle getBounds() {
-		return line.getBounds();
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -80,12 +77,6 @@ public class Line implements Figure {
 	public Figure clone() {
 		// TODO Auto-generated method stub
 		return null;
-	}
-	
-	public void update(FigureEvent e) {
-		for (FigureListener l : listeners) {
-			l.figureChanged(e);
-		}
 	}
 
 }
