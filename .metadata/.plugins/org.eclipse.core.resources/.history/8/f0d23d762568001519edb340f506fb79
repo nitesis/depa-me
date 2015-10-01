@@ -33,9 +33,29 @@ public class StdDrawModel implements DrawModel, FigureListener {
 	private List<DrawModelListener> listeners = new LinkedList<>();
 	private List<Figure> figures = new LinkedList<>();
 
+	// // Event handling for green slider
+	// greenSlider.addChangeListener(new ChangeListener() {
+	//
+	// public void stateChanged(ChangeEvent e) {
+	//
+	// int green = greenSlider.getValue();
+	//
+	// setColor(new Color(color.getRed(), green, color.getBlue()));
+	//
+	// }
+	// });
+	//
+	// listeners.add(new ColorListener() {
+	//
+	// @Override
+	// public void colorChanged(Color c) {
+	// greenSlider.setValue(c.getGreen());
+	// }
+	// });
+
 	@Override
 	public void addFigure(Figure f) {
-	
+		// TODO to be implemented
 		if (f != null && !figures.contains(f)) {
 		f.addFigureListener(this);
 
@@ -43,12 +63,13 @@ public class StdDrawModel implements DrawModel, FigureListener {
 		//hier erfährt view, dass figure hinzugefügt wurde
 		update(new DrawModelEvent(this, f, DrawModelEvent.Type.FIGURE_ADDED));
 		}
-
+		//System.out.println("StdDrawModel.addFigure has to be implemented");
+		
 	}
 
 	@Override
 	public Iterable<Figure> getFigures() {
-
+		// TODO to be implemented
 		System.out.println("StdDrawModel.getFigures has to be implemented");
 		return figures; // Only guarantees, that the application starts -- has
 						// to be replaced !!!
@@ -56,7 +77,10 @@ public class StdDrawModel implements DrawModel, FigureListener {
 
 	@Override
 	public void removeFigure(Figure f) {
-
+		// TODO to be implemented
+		// System.out.println("StdDrawModel.removeFigure has to be
+		// implemented");
+		
 		if(figures.remove(f)){
 		update(new DrawModelEvent(this, f, DrawModelEvent.Type.FIGURE_REMOVED));
 		f.removeFigureListener(this);
@@ -65,13 +89,17 @@ public class StdDrawModel implements DrawModel, FigureListener {
 
 	@Override
 	public void addModelChangeListener(DrawModelListener listener) {
-
+		// TODO to be implemented
+		// System.out.println("StdDrawModel.addModelChangeListener has to be
+		// implemented");
 		listeners.add(listener);
 	}
 
 	@Override
 	public void removeModelChangeListener(DrawModelListener listener) {
-
+		// TODO to be implemented
+		// System.out.println("StdDrawModel.removeModelChangeListener has to be
+		// implemented");
 		listeners.remove(listener);
 	}
 
