@@ -10,7 +10,7 @@ import java.util.List;
 public class Line implements Figure {
 
 	/**
-	 * Use the java.awt.Line2D in order to save/reuse code.
+	 * Use the java.awt.Line in order to save/reuse code.
 	 */
 	private java.awt.geom.Line2D line;
 	private List<FigureListener> listeners = new LinkedList<>();
