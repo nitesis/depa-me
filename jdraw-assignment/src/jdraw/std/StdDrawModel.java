@@ -127,7 +127,20 @@ public class StdDrawModel implements DrawModel, FigureListener {
 	@Override
 	public void removeAllFigures() {
 		// TODO to be implemented
-		System.out.println("StdDrawModel.removeAllFigures has to be implemented");
+		
+		//Iterator aus Figuren
+		Iterator<Figure> it = figures.iterator();
+		//So lange es ein nächstes Element in der Figurenliste gibt...
+		while(it.hasNext()){
+			//...weise dieses Element f zu...
+			Figure f = it.next();
+			//...entferne das Element aus der Liste von Figuren...
+			it.remove();
+			//...löse ein neus Event aus (nämlich dass die Zeichnung gelöscht wurde)...
+			update(new DrawModelEvent(this, f, DrawModelEvent.Type.DRAWING_CLEARED));
+			//...und entferne f aus der Liste der FigreListener
+			f.removeFigureListener(this);
+		}
 	}
 
 	public void update(DrawModelEvent e) {
