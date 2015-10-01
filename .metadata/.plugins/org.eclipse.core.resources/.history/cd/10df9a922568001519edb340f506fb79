@@ -98,6 +98,7 @@ public class StdDrawModel implements DrawModel, FigureListener {
 
 	@Override
 	public void removeAllFigures() {
+		// TODO to be implemented
 		
 		//Iterator mit Figures
 		Iterator<Figure> it = figures.iterator();
@@ -122,7 +123,7 @@ public class StdDrawModel implements DrawModel, FigureListener {
 
 	@Override
 	public void figureChanged(FigureEvent e) {
-	
+		// TODO Auto-generated method stub
 		//???
 		update(new DrawModelEvent(this, e.getFigure(), DrawModelEvent.Type.FIGURE_CHANGED));
 	}
