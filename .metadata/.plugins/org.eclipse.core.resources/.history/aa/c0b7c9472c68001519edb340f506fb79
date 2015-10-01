@@ -91,14 +91,9 @@ public class StdDrawModel implements DrawModel, FigureListener {
 	}
 
 	@Override
-	//Mehtode, die schon vorhandene Elemente in der Liste verschiebt
 	public void setFigureIndex(Figure f, int index) {
-		//Check, ob der Index existierte und das Element auch schon in der Liste vorhanden ist
-		if(index > figures.size() || !figures.contains(f)) throw new IllegalArgumentException();
-		figures.remove(f);
-		figures.add(index, f);
-		update(new DrawModelEvent(this, f, DrawModelEvent.Type.DRAWING_CHANGED));
-		
+	
+		figures.set(index, f);
 	}
 
 	@Override
