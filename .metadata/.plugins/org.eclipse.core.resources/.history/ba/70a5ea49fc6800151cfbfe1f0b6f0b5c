@@ -31,7 +31,7 @@ public class Line implements Figure {
 	 */
 	@Override
 	public void draw(Graphics g) {
-		g.setColor(Color.PINK);
+		g.setColor(Color.BLACK);
 		//Ist das hier eine gute Idee mit dem Casten?
 		g.drawLine((int)line.getX1(), (int)line.getY1(), (int)line.getX2(), (int)line.getY2());
 		
@@ -41,7 +41,7 @@ public class Line implements Figure {
 	public void move(int dx, int dy) {
 		if(dx != 0 || dy != 0) {
 			line.setLine(line.getX1() + dx, line.getY1() + dy, line.getX2() + dx, line.getY2() + dy);
-			
+			// TODO notification of change
 			update(new FigureEvent(this));
 			}	
 		

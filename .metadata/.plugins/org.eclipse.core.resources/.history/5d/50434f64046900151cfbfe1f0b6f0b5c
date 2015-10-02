@@ -55,7 +55,6 @@ public class LineTool implements DrawTool {
 	 * mouse was first pressed.
 	 */
 	private Point anchor = null;
-	private Point point2=null;
 
 	/**
 	 * Create a new rectangle tool for the given context.
@@ -117,15 +116,9 @@ public class LineTool implements DrawTool {
 	 */
 	public void mouseDrag(int x, int y, MouseEvent e) {
 		//hier wird Punkt 2 der Linie gesetzt
-		//newLine.setBounds(anchor, new Point(x, y));
-		point2= new Point(x,y);
-		//newLine.setBounds(anchor, point2);
-		newLine= new Line(anchor.getX(),anchor.getY(),point2.getX(),point2.getY());
-		//java.awt.geom.Line2D l = newLine.getBounds();
-		//this.context.showStatusText("w: " + r.width + ", h: " + r.height);
-		view.getModel().addFigure(newLine);
-
-		
+		newLine.setBounds(anchor, new Point(x, y));
+		java.awt.geom.Line2D r = newLine.getBounds();
+		this.context.showStatusText("w: " + r.width + ", h: " + r.height);
 	}
 
 	/**
@@ -143,8 +136,6 @@ public class LineTool implements DrawTool {
 		newLine = null;
 		anchor = null;
 		this.context.showStatusText("Line Mode");
-		view.getModel().addFigure(newLine);
-
 	}
 
 	@Override

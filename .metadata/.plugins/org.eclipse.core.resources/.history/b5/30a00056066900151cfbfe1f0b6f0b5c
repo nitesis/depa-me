@@ -143,8 +143,6 @@ public class LineTool implements DrawTool {
 		newLine = null;
 		anchor = null;
 		this.context.showStatusText("Line Mode");
-		view.getModel().addFigure(newLine);
-
 	}
 
 	@Override

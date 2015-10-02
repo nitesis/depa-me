@@ -41,7 +41,7 @@ public class Line implements Figure {
 	public void move(int dx, int dy) {
 		if(dx != 0 || dy != 0) {
 			line.setLine(line.getX1() + dx, line.getY1() + dy, line.getX2() + dx, line.getY2() + dy);
-			
+			// TODO notification of change
 			update(new FigureEvent(this));
 			}	
 		

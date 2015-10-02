@@ -101,7 +101,7 @@ public class LineTool implements DrawTool {
 		//hier wird Punkt 1 der Linie gesetzt
 		anchor = new Point(x, y);
 		newLine = new Line(x, y, x, y);
-		view.getModel().addFigure(newLine);
+		//view.getModel().addFigure(newLine);
 	}
 
 	/**
@@ -123,7 +123,7 @@ public class LineTool implements DrawTool {
 		newLine= new Line(anchor.getX(),anchor.getY(),point2.getX(),point2.getY());
 		//java.awt.geom.Line2D l = newLine.getBounds();
 		//this.context.showStatusText("w: " + r.width + ", h: " + r.height);
-		view.getModel().addFigure(newLine);
+		//view.getModel().addFigure(newLine);
 
 		
 	}

@@ -101,7 +101,7 @@ public class LineTool implements DrawTool {
 		//hier wird Punkt 1 der Linie gesetzt
 		anchor = new Point(x, y);
 		newLine = new Line(x, y, x, y);
-		view.getModel().addFigure(newLine);
+		//view.getModel().addFigure(newLine);
 	}
 
 	/**
@@ -143,8 +143,6 @@ public class LineTool implements DrawTool {
 		newLine = null;
 		anchor = null;
 		this.context.showStatusText("Line Mode");
-		view.getModel().addFigure(newLine);
-
 	}
 
 	@Override
