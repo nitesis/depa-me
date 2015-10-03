@@ -8,7 +8,6 @@ package jdraw.figures;
 import java.awt.Cursor;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
-import java.awt.geom.Ellipse2D;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -44,21 +43,21 @@ public class OvalTool implements DrawTool {
 	private DrawView view;
 
 	/**
-	 * Temporary variable. During oval creation (during a
+	 * Temporary variable. During rectangle creation (during a
 	 * mouse down - mouse drag - mouse up cycle) this variable refers
 	 * to the new rectangle that is inserted.
 	 */
-	private Ellipse2D newOval = null;
+	private Rect newRect = null;
 
 	/**
 	 * Temporary variable.
-	 * During oval creation this variable refers to the point the
+	 * During rectangle creation this variable refers to the point the
 	 * mouse was first pressed.
 	 */
 	private Point anchor = null;
 
 	/**
-	 * Create a new oval tool for the given context.
+	 * Create a new rectangle tool for the given context.
 	 * @param context a context to use this tool in.
 	 */
 	public OvalTool(DrawContext context) {
@@ -76,16 +75,16 @@ public class OvalTool implements DrawTool {
 	}
 
 	/**
-	 * Activates the Oval Mode. There will be a
+	 * Activates the Rectangle Mode. There will be a
 	 * specific menu added to the menu bar that provides settings for
-	 * Oval attributes
+	 * Rectangle attributes
 	 */
 	public void activate() {
-		this.context.showStatusText("Oval Mode");
+		this.context.showStatusText("Rectangle Mode");
 	}
 
 	/**
-	 * Initializes a new Oval object by setting an anchor
+	 * Initializes a new Rectangle object by setting an anchor
 	 * point where the mouse was pressed. A new Rectangle is then
 	 * added to the model.
 	 * @param x x-coordinate of mouse
@@ -95,16 +94,16 @@ public class OvalTool implements DrawTool {
 	 * @see jdraw.framework.DrawTool#mouseDown(int, int, MouseEvent)
 	 */
 	public void mouseDown(int x, int y, MouseEvent e) {
-		if (newOval != null) {
+		if (newRect != null) {
 			throw new IllegalStateException();
 		}
 		anchor = new Point(x, y);
-		newOval = new Ellipse2D(x, y, 0, 0);
-		view.getModel().addFigure(newOval);
+		newRect = new Rect(x, y, 0, 0);
+		view.getModel().addFigure(newRect);
 	}
 
 	/**
-	 * During a mouse drag, the Oval will be resized according to the mouse
+	 * During a mouse drag, the Rectangle will be resized according to the mouse
 	 * position. The status bar shows the current size.
 	 * 
 	 * @param x   x-coordinate of mouse
@@ -115,13 +114,13 @@ public class OvalTool implements DrawTool {
 	 * @see jdraw.framework.DrawTool#mouseDrag(int, int, MouseEvent)
 	 */
 	public void mouseDrag(int x, int y, MouseEvent e) {
-		newOval.setBounds(anchor, new Point(x, y));
-		java.awt.geom.Ellipse2D r = newOval.getBounds();
+		newRect.setBounds(anchor, new Point(x, y));
+		java.awt.Rectangle r = newRect.getBounds();
 		this.context.showStatusText("w: " + r.width + ", h: " + r.height);
 	}
 
 	/**
-	 * When the user releases the mouse, the Oval object is updated
+	 * When the user releases the mouse, the Rectangle object is updated
 	 * according to the color and fill status settings.
 	 * 
 	 * @param x   x-coordinate of mouse
@@ -132,7 +131,7 @@ public class OvalTool implements DrawTool {
 	 * @see jdraw.framework.DrawTool#mouseUp(int, int, MouseEvent)
 	 */
 	public void mouseUp(int x, int y, MouseEvent e) {
-		newOval = null;
+		newRect = null;
 		anchor = null;
 		this.context.showStatusText("Oval Mode");
 	}

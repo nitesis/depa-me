@@ -17,7 +17,6 @@ import javax.swing.KeyStroke;
 import javax.swing.filechooser.FileFilter;
 
 import jdraw.figures.LineTool;
-import jdraw.figures.OvalTool;
 import jdraw.figures.RectTool;
 import jdraw.framework.DrawCommandHandler;
 import jdraw.framework.DrawModel;
@@ -185,8 +184,6 @@ public class StdContext extends AbstractContext {
 		addTool(rectangleTool);
 		LineTool lineTool = new LineTool(this); 
 		addTool(lineTool);
-		OvalTool ovalTool = new OvalTool(this); 
-		addTool(ovalTool);
 	}
 
 	/**

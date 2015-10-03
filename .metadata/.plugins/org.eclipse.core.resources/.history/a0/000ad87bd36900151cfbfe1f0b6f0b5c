@@ -95,12 +95,12 @@ public class OvalTool implements DrawTool {
 	 * @see jdraw.framework.DrawTool#mouseDown(int, int, MouseEvent)
 	 */
 	public void mouseDown(int x, int y, MouseEvent e) {
-		if (newOval != null) {
+		if (newRect != null) {
 			throw new IllegalStateException();
 		}
 		anchor = new Point(x, y);
 		newOval = new Ellipse2D(x, y, 0, 0);
-		view.getModel().addFigure(newOval);
+		view.getModel().addFigure(newRect);
 	}
 
 	/**

@@ -59,28 +59,28 @@ public class Oval implements Figure{
 	
 	@Override
 	public void setBounds(Point origin, Point corner) {
-		oval.setFrameFromDiagonal(origin, corner);
+		rectangle.setFrameFromDiagonal(origin, corner);
 		// XXX Notifikation eingentlich nur falls sich die Figur geändert hat.
 		update(new FigureEvent(this));
 	}
 
 	@Override
 	public void move(int dx, int dy) {
-//		if(dx != 0 || dy != 0) {
-//		oval.set.setLocation((int)oval.getX() + dx, (int)oval.getY() + dy);
-//		
-//		update(new FigureEvent(this));
-//		}		
+		if(dx != 0 || dy != 0) {
+		rectangle.setLocation(rectangle.x + dx, rectangle.y + dy);
+		
+		update(new FigureEvent(this));
+		}		
 	}
 
 	@Override
 	public boolean contains(int x, int y) {
-		return oval.contains(x, y);
+		return rectangle.contains(x, y);
 	}
 
 	@Override
 	public Rectangle getBounds() {
-		return oval.getBounds();
+		return rectangle.getBounds();
 	}
 
 	/**
