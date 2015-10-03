@@ -54,8 +54,8 @@ public class Line implements Figure {
 
 	@Override
 	public void setBounds(Point origin, Point corner) {
-		line.setLine(origin.getX(), origin.getY(), corner.getX(), corner.getY());
-		update(new FigureEvent(this));
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
@@ -87,17 +87,10 @@ public class Line implements Figure {
 		return null;
 	}
 	
-	private void update(FigureEvent e) {
-		
-		FigureListener[] copy;
-		// ???Warum hier synchronized???
-		synchronized(this) { 
-			copy = listeners.toArray(new FigureListener[listeners.size()]);
-			} 
-		for (FigureListener l : copy) { 
-			l.figureChanged(e); 
+	public void update(FigureEvent e) {
+		for (FigureListener l : listeners) {
+			l.figureChanged(e);
 		}
-
 	}
 
 }

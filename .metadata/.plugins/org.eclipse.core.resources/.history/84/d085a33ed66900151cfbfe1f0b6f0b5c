@@ -16,7 +16,6 @@ import javax.swing.ImageIcon;
 import jdraw.framework.DrawContext;
 import jdraw.framework.DrawTool;
 import jdraw.framework.DrawView;
-import jdraw.framework.Figure;
 
 /**
  * This tool defines a mode for drawing rectangles.
@@ -50,7 +49,6 @@ public class OvalTool implements DrawTool {
 	 * to the new rectangle that is inserted.
 	 */
 	private Ellipse2D newOval = null;
-	private Rect newRect = null;
 
 	/**
 	 * Temporary variable.
@@ -101,8 +99,8 @@ public class OvalTool implements DrawTool {
 			throw new IllegalStateException();
 		}
 		anchor = new Point(x, y);
-		newOval = new Ellipse2D.Double(x, y, 10, 10);
-		view.getModel().addFigure((Figure)newOval);
+		newOval = new Ellipse2D.Double(x, y, 0, 0);
+		view.getModel().addFigure(newOval);
 	}
 
 	/**
@@ -117,8 +115,8 @@ public class OvalTool implements DrawTool {
 	 * @see jdraw.framework.DrawTool#mouseDrag(int, int, MouseEvent)
 	 */
 	public void mouseDrag(int x, int y, MouseEvent e) {
-		((Figure) newOval).setBounds(anchor, new Point(x, y));
-		java.awt.Rectangle r = newRect.getBounds();
+		newOval.setBounds(anchor, new Point(x, y));
+		java.awt.geom.Ellipse2D r = newOval.getBounds();
 		this.context.showStatusText("w: " + r.width + ", h: " + r.height);
 	}
 

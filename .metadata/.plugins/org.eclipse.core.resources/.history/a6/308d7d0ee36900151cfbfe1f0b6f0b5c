@@ -49,7 +49,7 @@ public class StdDrawModel implements DrawModel, FigureListener {
 	@Override
 	public Iterable<Figure> getFigures() {
 
-		//System.out.println("StdDrawModel.getFigures has to be implemented");
+		System.out.println("StdDrawModel.getFigures has to be implemented");
 		return figures; // Only guarantees, that the application starts -- has
 						// to be replaced !!!
 	}

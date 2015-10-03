@@ -33,7 +33,7 @@ public class Line implements Figure {
 	public void draw(Graphics g) {
 		g.setColor(Color.PINK);
 		//Ist das hier eine gute Idee mit dem Casten?
-		g.drawLine((int)line.getX1(), (int)line.getY1(), (int)line.getX2(), (int)line.getY2());
+		g.drawLine((int)line.getX1(), (int)line.getY1(), 0, 0);
 		
 	}
 
@@ -54,8 +54,8 @@ public class Line implements Figure {
 
 	@Override
 	public void setBounds(Point origin, Point corner) {
-		line.setLine(origin.getX(), origin.getY(), corner.getX(), corner.getY());
-		update(new FigureEvent(this));
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override

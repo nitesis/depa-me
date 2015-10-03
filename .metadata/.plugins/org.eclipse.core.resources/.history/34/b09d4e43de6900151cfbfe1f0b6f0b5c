@@ -6,7 +6,6 @@
 package jdraw.figures;
 
 import java.awt.Color;
-import java.awt.Event;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -58,7 +57,6 @@ public class Oval implements Figure{
 	
 	@Override
 	public void setBounds(Point origin, Point corner) {
-	
 		oval.setFrameFromDiagonal(origin, corner);
 		// XXX Notifikation eingentlich nur falls sich die Figur geändert hat.
 		update(new FigureEvent(this));

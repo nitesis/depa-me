@@ -58,7 +58,6 @@ public class Oval implements Figure{
 	
 	@Override
 	public void setBounds(Point origin, Point corner) {
-	
 		oval.setFrameFromDiagonal(origin, corner);
 		// XXX Notifikation eingentlich nur falls sich die Figur geändert hat.
 		update(new FigureEvent(this));
