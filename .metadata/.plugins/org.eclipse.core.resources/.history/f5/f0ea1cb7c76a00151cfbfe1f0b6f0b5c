@@ -103,7 +103,7 @@ public class OvalTool implements DrawTool {
 		anchor = new Point(x, y);
 		// newOval = new Ellipse2D.Double(x, y, 10, 10);
 		newOval = new Oval(x, y, 10, 10);
-		view.getModel().addFigure(newOval);
+		view.getModel().addFigure((Figure)newOval);
 	}
 
 	/**
@@ -118,10 +118,9 @@ public class OvalTool implements DrawTool {
 	 * @see jdraw.framework.DrawTool#mouseDrag(int, int, MouseEvent)
 	 */
 	public void mouseDrag(int x, int y, MouseEvent e) {
-		newOval.setBounds(anchor, new Point(x, y));
+		((Figure) newOval).setBounds(anchor, new Point(x, y));
 		// Hier wird wohl eine NPE ausgelöst. Warum?
-		// Ich hatte hier vorher java.awt.Rectangle r = newRect.getBounds();
-		java.awt.Rectangle r = newOval.getBounds();
+		java.awt.Rectangle r = newRect.getBounds();
 		this.context.showStatusText("w: " + r.width + ", h: " + r.height);
 	}
 

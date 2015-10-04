@@ -116,14 +116,16 @@ public class LineTool implements DrawTool {
 	 * @see jdraw.framework.DrawTool#mouseDrag(int, int, MouseEvent)
 	 */
 	public void mouseDrag(int x, int y, MouseEvent e) {
+		//??? Was pssiert hier und warum passiert es nicht so, wie es soll???
+		
 		//hier wird Punkt 2 der Linie gesetzt
-		//newLine.setBounds(anchor, new Point(x, y));
-		point2= new Point(x,y);
+		newLine.setBounds(anchor, new Point(x, y));
+		//point2= new Point(x,y);
 		//newLine.setBounds(anchor, point2);
-		newLine= new Line(anchor.getX(),anchor.getY(),point2.getX(),point2.getY());
-		//java.awt.geom.Line2D l = newLine.getBounds();
-		//this.context.showStatusText("w: " + r.width + ", h: " + r.height);
-		view.getModel().addFigure(newLine);
+		//newLine= new Line(anchor.getX(),anchor.getY(),point2.getX(),point2.getY());
+		java.awt.Rectangle r = newLine.getBounds();
+		this.context.showStatusText("w: " + r.width + ", h: " + r.height);
+		//view.getModel().addFigure(newLine);
 
 		
 	}
@@ -139,11 +141,12 @@ public class LineTool implements DrawTool {
 	 * 
 	 * @see jdraw.framework.DrawTool#mouseUp(int, int, MouseEvent)
 	 */
+	//??? Was pssiert hier und warum passiert es nicht so, wie es soll???
 	public void mouseUp(int x, int y, MouseEvent e) {
 		newLine = null;
 		anchor = null;
 		this.context.showStatusText("Line Mode");
-		view.getModel().addFigure(newLine);
+		//view.getModel().addFigure(newLine);
 
 	}
 
