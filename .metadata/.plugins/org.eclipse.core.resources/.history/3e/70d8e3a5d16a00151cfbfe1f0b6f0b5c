@@ -139,9 +139,6 @@ public class LineTool implements DrawTool {
 	 * @see jdraw.framework.DrawTool#mouseUp(int, int, MouseEvent)
 	 */
 	// Setzt die Bounds meiner Figure, wenn ich die Maus gezogen habe
-	// Wenn MouseUp -> Figur ist fertig gezeichnet... 
-	// ...und darum setze ich alle Variable wieder auf null, 
-	// damit ich diese wieder in einer anderen Linie benutzen kann 
 	public void mouseUp(int x, int y, MouseEvent e) {
 		newLine = null;
 		anchor = null;
