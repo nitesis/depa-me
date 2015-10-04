@@ -38,7 +38,7 @@ public class Line implements Figure {
 		// YYY ja, das ist kein Problem. Es wird zwar von den Methoden getX1(), getY1() etc ein double zurückgegeen, 
 		//     aber es ist die double-Repräsentation einer Ganzzahl. Konvertieren in einen int mit einem Cast geht
 		//     ohne Probleme.
-		g.drawLine((int)line.x1, (int)line.y1, (int)line.x2, (int)line.y2);
+		g.drawLine((int)line.getX1(), (int)line.getY1(), (int)line.getX2(), (int)line.getY2());
 		
 		// YYY Variante:
 //		Graphics2D g2 = (Graphics2D)g;
@@ -48,7 +48,7 @@ public class Line implements Figure {
 	@Override
 	public void move(int dx, int dy) {
 		if(dx != 0 || dy != 0) {
-			line.setLine(line.x1 + dx, line.y1 + dy, line.x2 + dx, line.y2 + dy);
+			line.setLine(line.getX1() + dx, line.getY1() + dy, line.getX2() + dx, line.getY2() + dy);
 			
 			update(new FigureEvent(this));
 			}	
@@ -73,7 +73,7 @@ public class Line implements Figure {
 	// Setzt die Bounds meiner Figure nachdem die Maus gezogen wurde 
 	public Rectangle getBounds() {
 		//return line.getBounds();
-		Rectangle rec = new Rectangle((int)line.x1,(int)line.y1,(int)line.x2,(int)line.y2);
+		Rectangle rec = new Rectangle((int)line.getX1(),(int)line.getY1(),(int)line.getX2(),(int)line.getY2());
 		return rec.getBounds();
 	}
 

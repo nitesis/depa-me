@@ -73,7 +73,7 @@ public class Line implements Figure {
 	// Setzt die Bounds meiner Figure nachdem die Maus gezogen wurde 
 	public Rectangle getBounds() {
 		//return line.getBounds();
-		Rectangle rec = new Rectangle((int)line.x1,(int)line.y1,(int)line.x2,(int)line.y2);
+		Rectangle rec = new Rectangle((int)line.getX1(),(int)line.getY1(),(int)line.getX2(),(int)line.getY2());
 		return rec.getBounds();
 	}
 
