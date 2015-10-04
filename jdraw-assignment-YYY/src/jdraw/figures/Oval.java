@@ -113,6 +113,10 @@ public class Oval implements Figure{
 		// XXX auch hier, iteriert werden sollte über eine Kopie der Listener.
 		FigureListener[] copy;
 		// ???Warum hier synchronized???
+		// YYY das ist Code den sie so vielleicht auch der Klasse java.util.Observable übernommen haben.
+		//     Das synchronized ist da damit das Kopieren auch funktioniert wenn die Methode update aus
+		//     mehreren Threads aufgerufen wird. synchronizes stellt sicher, dass mehrere THreads sich
+		//     koordinieren. Für unseren Kurs können SIe das aber auch weglassen.
 		synchronized(this) { 
 			copy = listeners.toArray(new FigureListener[listeners.size()]);
 			} 

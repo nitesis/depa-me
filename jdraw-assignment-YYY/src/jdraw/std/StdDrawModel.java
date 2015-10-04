@@ -95,7 +95,7 @@ public class StdDrawModel implements DrawModel, FigureListener {
 	public void setFigureIndex(Figure f, int index) {
 		//Check, ob der Index existierte und das Element auch schon in der Liste vorhanden ist
 		if(index > figures.size() || !figures.contains(f)) throw new IllegalArgumentException();
-		// XXX der Test "index > figures.size()" ist etwas zu schwach, denn auch wenn index == figures.size()
+		// XXX der Test "index > figures.size()" ist zu schwach, denn auch wenn index == figures.size()
 		//     muss eine Exception geworfen werden. Der Index kann nur zwischen 0 und size()-1 sein.
 		figures.remove(f);
 		figures.add(index, f);

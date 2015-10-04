@@ -2,6 +2,7 @@ package jdraw.figures;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.geom.Line2D;
@@ -33,8 +34,14 @@ public class Line implements Figure {
 	public void draw(Graphics g) {
 		g.setColor(Color.PINK);
 		//Ist das hier eine gute Idee mit dem Casten?
+		// YYY ja, das ist kein Problem. Es wird zwar von den Methoden getX1(), getY1() etc ein double zurückgegeen, 
+		//     aber es ist die double-Repräsentation einer Ganzzahl. Konvertieren in einen int mit einem Cast geht
+		//     ohne Probleme.
 		g.drawLine((int)line.getX1(), (int)line.getY1(), (int)line.getX2(), (int)line.getY2());
 		
+		// YYY Variante:
+//		Graphics2D g2 = (Graphics2D)g;
+//		g2.draw(line);;
 	}
 
 	@Override

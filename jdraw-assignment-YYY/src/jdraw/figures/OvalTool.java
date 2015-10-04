@@ -49,7 +49,7 @@ public class OvalTool implements DrawTool {
 	 * mouse down - mouse drag - mouse up cycle) this variable refers
 	 * to the new rectangle that is inserted.
 	 */
-	private Ellipse2D newOval = null;
+	private Figure newOval = null;
 	private Rect newRect = null;
 
 	/**
@@ -101,7 +101,8 @@ public class OvalTool implements DrawTool {
 			throw new IllegalStateException();
 		}
 		anchor = new Point(x, y);
-		newOval = new Ellipse2D.Double(x, y, 10, 10);
+		// newOval = new Ellipse2D.Double(x, y, 10, 10);
+		newOval = new Oval(x, y, 10, 10);
 		view.getModel().addFigure((Figure)newOval);
 	}
 
