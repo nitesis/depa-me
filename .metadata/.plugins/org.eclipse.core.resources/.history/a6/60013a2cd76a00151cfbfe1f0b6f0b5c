@@ -80,9 +80,7 @@ public class Oval implements Figure{
 
 	@Override
 	public Rectangle getBounds() {
-		Rectangle rec = new Rectangle((int)oval.getX(),(int)oval.getY(),(int)oval.getWidth(),(int)oval.getHeight());
-		return rec.getBounds();
-		//return oval.getBounds();
+		return oval.getBounds();
 	}
 
 	/**
