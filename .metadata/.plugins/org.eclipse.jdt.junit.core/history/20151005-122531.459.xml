@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="RectangleTest" project="jdraw-assignment-YYY" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="jdraw.test.RectangleTest" time="0.184">
+    <testcase name="testNotification1" classname="jdraw.test.RectangleTest" time="0.177"/>
+    <testcase name="testNotification2" classname="jdraw.test.RectangleTest" time="0.001"/>
+    <testcase name="testMultiListeners" classname="jdraw.test.RectangleTest" time="0.002"/>
+    <testcase name="testRemoveListener" classname="jdraw.test.RectangleTest" time="0.004"/>
+  </testsuite>
+</testrun>

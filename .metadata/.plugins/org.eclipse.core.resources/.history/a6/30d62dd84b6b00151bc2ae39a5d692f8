@@ -7,8 +7,7 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
 	DrawModelTest.class,
 	RectangleTest.class,
-	OvalTest.class,
-	LineTest.class
+	OvalTest.class
 })
 public class JDrawTests {
 }
