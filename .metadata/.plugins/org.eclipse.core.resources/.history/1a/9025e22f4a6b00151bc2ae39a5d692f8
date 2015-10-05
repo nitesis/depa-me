@@ -85,13 +85,13 @@ public class Line implements Figure {
 
 	@Override
 	public void addFigureListener(FigureListener listener) {
-		listeners.add(listener);
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void removeFigureListener(FigureListener listener) {
-		listeners.remove(listener);
+		// TODO Auto-generated method stub
 		
 	}
 
