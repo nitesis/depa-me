@@ -1,0 +1,5 @@
+package patterns.state.parser;
+
+public class State00 {
+
+}

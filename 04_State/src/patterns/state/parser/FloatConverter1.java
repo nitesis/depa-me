@@ -3,6 +3,7 @@ package patterns.state.parser;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+
 public class FloatConverter1 {
 	
 	public static void main(String[] args) throws Exception {
@@ -28,7 +29,7 @@ public class FloatConverter1 {
 	}
 	
 	private static double parseFloat(String str) {
-		State s = State.S0;
+		patterns.state.parser.State s = new State00();
 		double m = 0, quo = 10;
 		int exp = 0, exp_sign = 1;
 		int pos = 0;
@@ -83,7 +84,7 @@ public class FloatConverter1 {
 		}
 	}
 	
-	private enum State {
-		S0, S1, S2, S3, S4, S5, S6, ERROR
-	}
+//	public enum State {
+//		S0, S1, S2, S3, S4, S5, S6, ERROR
+//	}
 }

@@ -66,11 +66,11 @@ public class Oval implements Figure{
 
 	@Override
 	public void move(int dx, int dy) {
-//		if(dx != 0 || dy != 0) {
-//		oval.set.setLocation((int)oval.getX() + dx, (int)oval.getY() + dy);
-//		
-//		update(new FigureEvent(this));
-//		}		
+		if(dx != 0 || dy != 0) {
+//		oval = oval.setFrameFromDiagonal(oval.getX() + dx, oval.getY() + dy, oval.getWidth() + dx, oval..getHeight() + dy);
+		
+		update(new FigureEvent(this));
+		}		
 	}
 
 	@Override

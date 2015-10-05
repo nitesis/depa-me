@@ -1,0 +1,12 @@
+package patterns.state.parser;
+
+public abstract class AbstractState implements State {
+
+	public boolean isDigit(char ch) {
+		return Character.isDigit(ch);
+	}
+
+	public int getNumericValue(char ch) {
+		return Character.getNumericValue(ch);
+	}
+}

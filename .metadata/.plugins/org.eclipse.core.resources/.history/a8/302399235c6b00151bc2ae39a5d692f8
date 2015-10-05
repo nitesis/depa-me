@@ -1,0 +1,13 @@
+package patterns.state.parser;
+
+public class State03 implements State {
+
+	public boolean isDigit(char ch) {
+		return Character.isDigit(ch);
+	}
+
+	public int getNumericValue(char ch) {
+		return Character.getNumericValue(ch);
+	}
+
+}

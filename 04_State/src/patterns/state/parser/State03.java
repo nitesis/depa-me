@@ -1,0 +1,30 @@
+package patterns.state.parser;
+
+public class State03 implements State {
+
+	private double m = 0, quo = 10;
+	
+	public boolean isDigit(char ch) {
+		return Character.isDigit(ch);
+	}
+
+	public int getNumericValue(char ch) {
+		return Character.getNumericValue(ch);
+	}
+	
+	public State parse(char ch) {
+		if(isDigit(ch)) { 
+			m = m + getNumericValue(ch)/quo; 
+			quo = quo*10; 
+			return null;
+		}
+		else if(ch == 'e') { 
+			return new State04(); 
+			}
+		else if(ch == 'E') { 
+			return new State04(); 
+			}
+		else return new StateError();
+	}
+
+}
