@@ -58,7 +58,7 @@ public class Line implements Figure {
 	@Override
 	public boolean contains(int x, int y) {
 		
-		return line.ptLineDist(x, y) < 5;
+		return line.contains(x, y);
 	}
 
 	@Override
