@@ -1,7 +1,5 @@
 package patterns.state.tickets;
-/*
- * TicketMachine with StatePattern
- */
+
 public class TicketMachine2 implements TicketMachine {
 	private int destination;
 	private boolean firstClass, retour, halfPrice;
