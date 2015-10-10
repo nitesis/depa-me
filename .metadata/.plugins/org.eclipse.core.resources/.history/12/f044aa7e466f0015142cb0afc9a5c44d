@@ -1,0 +1,59 @@
+package patterns.state.parser;
+
+public class State00 implements State{
+
+	FloatConverter1 floatConverter;
+	double m = 0, quo = 10;
+	int exp = 0, exp_sign = 1;
+	
+	public State00 (FloatConverter1 floatConverter){
+		this.floatConverter = floatConverter;
+	}
+	
+	@Override
+	public boolean isDigit(char ch) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isPoint(char ch) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isPlusOrMinus(char ch) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isE(char ch) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int getNumericValue(char ch) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+//	public boolean isDigit(char ch) {
+//		return Character.isDigit(ch);
+//	}
+//
+//	public int getNumericValue(char ch) {
+//		return Character.getNumericValue(ch);
+//	}
+//
+//	public State parse(char ch){
+//		if(isDigit(ch)) { 
+//			double m = getNumericValue(ch); 
+//			return new State01(); }
+//		else if(ch == '.') { 
+//			return new State02(); }
+//		else return new StateError();
+//	}
+}

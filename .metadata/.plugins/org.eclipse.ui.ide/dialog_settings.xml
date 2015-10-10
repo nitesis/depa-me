@@ -10,6 +10,7 @@
 			<item value="/Users/nitesis/Documents/FHNW/workspace/depa-me/ColorPicker"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="/Users/nitesis/Documents/FHNW/HS2015/depa/__remotecopy/Materialien/04_State/04_State.zip"/>
 			<item value="/Users/nitesis/Documents/FHNW/HS2015/depa/jdraw-assignment_ue03_souzan.zip"/>
 			<item value="/Users/nitesis/Documents/FHNW/HS2015/depa/jdraw-assignment-YYY.zip"/>
 			<item value="/Users/nitesis/Documents/FHNW/HS2015/depa/bendjus_jdraw_gruntz.zip"/>
@@ -17,5 +18,12 @@
 			<item value="/Users/nitesis/Documents/FHNW/HS2015/depa/__remotecopy/Uebungen/U02/jdraw-student.zip"/>
 			<item value=""/>
 		</list>
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item value="526" key="DIALOG_WIDTH"/>
+		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
+		<item value="529" key="DIALOG_HEIGHT"/>
+		<item value="369" key="DIALOG_X_ORIGIN"/>
+		<item value="22" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

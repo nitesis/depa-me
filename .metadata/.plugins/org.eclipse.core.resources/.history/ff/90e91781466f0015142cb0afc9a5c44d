@@ -1,0 +1,10 @@
+package patterns.state.parser;
+
+public interface State {
+
+	boolean isDigit(char ch);
+	boolean isPoint(char ch);
+	boolean isPlusOrMinus(char ch);
+	boolean isE(char ch);
+	int getNumericValue(char ch);
+}
