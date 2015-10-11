@@ -45,7 +45,9 @@ public class FloatConverter1 {
 			//     aber dann wird nach dem ersten Aufruf die Variable s auf State01 oder State02 (oder auf StateError) verweisen.
 			//     Und dann wird der Typcast nach State00 fehlschlagen! Aber wenn die Methode parse im INterface definiert ist,
 			//     dann ist auch kein Cast mehr nötig.
-			((State00) s).parse(ch);
+			s = s.parse(ch);
+			//((State00) s).parse(ch);
+			
 //			switch (s) {
 //			case S0:
 //				if(isDigit(ch)) { m = getNumericValue(ch); s = State.S1; }

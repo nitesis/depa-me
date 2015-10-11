@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 import jdraw.framework.DrawContext;
 import jdraw.framework.DrawTool;
 import jdraw.framework.DrawView;
+import jdraw.std.AbstractFigureTool;
 
 /**
  * This tool defines a mode for drawing rectangles.
@@ -24,7 +25,7 @@ import jdraw.framework.DrawView;
  * @author  Christoph Denzler
  * @version 2.1, 27.09.07
  */
-public class LineTool implements DrawTool {
+public class LineTool extends AbstractFigureTool implements DrawTool {
   
 	/** 
 	 * the image resource path. 
@@ -71,9 +72,9 @@ public class LineTool implements DrawTool {
 	 * and clearing the status bar.
 	 * @see jdraw.framework.DrawTool#deactivate()
 	 */
-	public void deactivate() {
-		this.context.showStatusText("");
-	}
+//	public void deactivate() {
+//		this.context.showStatusText("");
+//	}
 
 	/**
 	 * Activates the Rectangle Mode. There will be a
@@ -148,10 +149,10 @@ public class LineTool implements DrawTool {
 		this.context.showStatusText("Line Mode");
 	}
 
-	@Override
-	public Cursor getCursor() {
-		return Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR);
-	}
+//	@Override
+//	public Cursor getCursor() {
+//		return Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR);
+//	}
 	
 	@Override
 	public Icon getIcon() {

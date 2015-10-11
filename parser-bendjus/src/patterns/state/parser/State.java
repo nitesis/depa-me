@@ -7,8 +7,12 @@ public interface State {
 	//     bzw. könnten (zumindest seit Java8) auch als statische Methoden im Interface definiert werden.
 	//     Man erkennt dies daran, dass diese Methoden in ALLEN Implementierungen dieses State-Interfaces
 	//     identisch sind! 
-	boolean isDigit(char ch);
-	int getNumericValue(char ch);
+	static boolean isDigit(char ch) {
+		return Character.isDigit(ch);
+	}
+	static int getNumericValue(char ch) {
+		return Character.getNumericValue(ch);
+	}
 	
 	// XXX was hier jetzt noch fehlt ist die eigentliche Methode (oder die Methoden) die auf dem aktuellen
 	//     State-Objekt aufgerufen werden und die sich dann zustandsspezifisch verhalten. Diese Methode
