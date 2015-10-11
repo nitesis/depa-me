@@ -17,7 +17,6 @@ import jdraw.framework.Figure;
 import jdraw.framework.FigureEvent;
 import jdraw.framework.FigureHandle;
 import jdraw.framework.FigureListener;
-import jdraw.std.AbstractFigure;
 
 /**
  * Represents rectangles in JDraw.
@@ -25,7 +24,7 @@ import jdraw.std.AbstractFigure;
  * @author Christoph Denzler
  *
  */
-public class Rect extends AbstractFigure implements Figure{
+public class Rect implements Figure{
 	/**
 	 * Use the java.awt.Rectangle in order to save/reuse code.
 	 */
@@ -91,37 +90,37 @@ public class Rect extends AbstractFigure implements Figure{
 		return null;
 	}
 
-//	@Override
-//	public void addFigureListener(FigureListener listener) {
-//		listeners.add(listener);
-//	}
-//
-//	@Override
-//	public void removeFigureListener(FigureListener listener) {
-//		listeners.remove(listener);
-//	}
+	@Override
+	public void addFigureListener(FigureListener listener) {
+		listeners.add(listener);
+	}
+
+	@Override
+	public void removeFigureListener(FigureListener listener) {
+		listeners.remove(listener);
+	}
 
 	@Override
 	public Figure clone() {
 		return null;
 	}
 	
-//	// XXX ich würde diese Methode nicht als public deklarieren, denn sie soll nur intern aufgerufen werden 
-//	//     wenn sich der Zustand geändert hat => private
-//	private void update(FigureEvent e) {
-//		// XXX auch hier, iteriert werden sollte über eine Kopie der Listener.
-//		FigureListener[] copy;
-//		// ???Warum hier synchronized???
-//		synchronized(this) { 
-//			copy = listeners.toArray(new FigureListener[listeners.size()]);
-//			} 
-//		for (FigureListener l : copy) { 
-//			l.figureChanged(e); 
-//		}
+	// XXX ich würde diese Methode nicht als public deklarieren, denn sie soll nur intern aufgerufen werden 
+	//     wenn sich der Zustand geändert hat => private
+	private void update(FigureEvent e) {
+		// XXX auch hier, iteriert werden sollte über eine Kopie der Listener.
+		FigureListener[] copy;
+		// ???Warum hier synchronized???
+		synchronized(this) { 
+			copy = listeners.toArray(new FigureListener[listeners.size()]);
+			} 
+		for (FigureListener l : copy) { 
+			l.figureChanged(e); 
+		}
 		// old version
 //		for (FigureListener l : listeners) {
 //			l.figureChanged(e);
 //		}
-//	}
+	}
 
 }

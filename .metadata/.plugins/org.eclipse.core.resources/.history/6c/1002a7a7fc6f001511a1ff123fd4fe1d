@@ -17,7 +17,6 @@ import jdraw.framework.Figure;
 import jdraw.framework.FigureEvent;
 import jdraw.framework.FigureHandle;
 import jdraw.framework.FigureListener;
-import jdraw.std.AbstractFigure;
 
 /**
  * Represents rectangles in JDraw.
@@ -25,7 +24,7 @@ import jdraw.std.AbstractFigure;
  * @author Christoph Denzler
  *
  */
-public class Oval extends AbstractFigure implements Figure {
+public class Oval implements Figure {
 	/**
 	 * Use the java.awt.Rectangle in order to save/reuse code.
 	 */
@@ -102,15 +101,15 @@ public class Oval extends AbstractFigure implements Figure {
 		return null;
 	}
 
-//	@Override
-//	public void addFigureListener(FigureListener listener) {
-//		listeners.add(listener);
-//	}
-//
-//	@Override
-//	public void removeFigureListener(FigureListener listener) {
-//		listeners.remove(listener);
-//	}
+	@Override
+	public void addFigureListener(FigureListener listener) {
+		listeners.add(listener);
+	}
+
+	@Override
+	public void removeFigureListener(FigureListener listener) {
+		listeners.remove(listener);
+	}
 
 	@Override
 	public Figure clone() {
@@ -120,27 +119,27 @@ public class Oval extends AbstractFigure implements Figure {
 	// XXX ich würde diese Methode nicht als public deklarieren, denn sie soll
 	// nur intern aufgerufen werden
 	// wenn sich der Zustand geändert hat => private
-//	private void update(FigureEvent e) {
-//		// XXX auch hier, iteriert werden sollte über eine Kopie der Listener.
-//		FigureListener[] copy;
-//		// ???Warum hier synchronized???
-//		// YYY das ist Code den sie so vielleicht auch der Klasse
-//		// java.util.Observable übernommen haben.
-//		// Das synchronized ist da damit das Kopieren auch funktioniert wenn die
-//		// Methode update aus
-//		// mehreren Threads aufgerufen wird. synchronizes stellt sicher, dass
-//		// mehrere THreads sich
-//		// koordinieren. Für unseren Kurs können SIe das aber auch weglassen.
-//		synchronized (this) {
-//			copy = listeners.toArray(new FigureListener[listeners.size()]);
-//		}
-//		for (FigureListener l : copy) {
-//			l.figureChanged(e);
-//		}
-//		// old version
-//		// for (FigureListener l : listeners) {
-//		// l.figureChanged(e);
-//		// }
-//	}
+	private void update(FigureEvent e) {
+		// XXX auch hier, iteriert werden sollte über eine Kopie der Listener.
+		FigureListener[] copy;
+		// ???Warum hier synchronized???
+		// YYY das ist Code den sie so vielleicht auch der Klasse
+		// java.util.Observable übernommen haben.
+		// Das synchronized ist da damit das Kopieren auch funktioniert wenn die
+		// Methode update aus
+		// mehreren Threads aufgerufen wird. synchronizes stellt sicher, dass
+		// mehrere THreads sich
+		// koordinieren. Für unseren Kurs können SIe das aber auch weglassen.
+		synchronized (this) {
+			copy = listeners.toArray(new FigureListener[listeners.size()]);
+		}
+		for (FigureListener l : copy) {
+			l.figureChanged(e);
+		}
+		// old version
+		// for (FigureListener l : listeners) {
+		// l.figureChanged(e);
+		// }
+	}
 
 }

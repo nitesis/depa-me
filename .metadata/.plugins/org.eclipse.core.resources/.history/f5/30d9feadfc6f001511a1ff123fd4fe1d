@@ -102,15 +102,15 @@ public class Oval extends AbstractFigure implements Figure {
 		return null;
 	}
 
-//	@Override
-//	public void addFigureListener(FigureListener listener) {
-//		listeners.add(listener);
-//	}
-//
-//	@Override
-//	public void removeFigureListener(FigureListener listener) {
-//		listeners.remove(listener);
-//	}
+	@Override
+	public void addFigureListener(FigureListener listener) {
+		listeners.add(listener);
+	}
+
+	@Override
+	public void removeFigureListener(FigureListener listener) {
+		listeners.remove(listener);
+	}
 
 	@Override
 	public Figure clone() {

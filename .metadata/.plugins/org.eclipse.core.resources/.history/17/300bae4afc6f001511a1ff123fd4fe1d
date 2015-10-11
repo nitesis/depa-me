@@ -13,9 +13,8 @@ import jdraw.framework.Figure;
 import jdraw.framework.FigureEvent;
 import jdraw.framework.FigureHandle;
 import jdraw.framework.FigureListener;
-import jdraw.std.AbstractFigure;
 
-public class Line extends AbstractFigure implements Figure {
+public class Line implements Figure {
 
 	/**
 	 * Use the java.awt.Line2D in order to save/reuse code.
@@ -84,17 +83,17 @@ public class Line extends AbstractFigure implements Figure {
 		return null;
 	}
 
-//	@Override
-//	public void addFigureListener(FigureListener listener) {
-//		listeners.add(listener);
-//		
-//	}
-//
-//	@Override
-//	public void removeFigureListener(FigureListener listener) {
-//		listeners.remove(listener);
-//		
-//	}
+	@Override
+	public void addFigureListener(FigureListener listener) {
+		listeners.add(listener);
+		
+	}
+
+	@Override
+	public void removeFigureListener(FigureListener listener) {
+		listeners.remove(listener);
+		
+	}
 
 	@Override
 	public Figure clone() {
@@ -102,17 +101,17 @@ public class Line extends AbstractFigure implements Figure {
 		return null;
 	}
 	
-//	private void update(FigureEvent e) {
-//		
-//		FigureListener[] copy;
-//		// ???Warum hier synchronized???
-//		synchronized(this) { 
-//			copy = listeners.toArray(new FigureListener[listeners.size()]);
-//			} 
-//		for (FigureListener l : copy) { 
-//			l.figureChanged(e); 
-//		}
-//
-//	}
+	private void update(FigureEvent e) {
+		
+		FigureListener[] copy;
+		// ???Warum hier synchronized???
+		synchronized(this) { 
+			copy = listeners.toArray(new FigureListener[listeners.size()]);
+			} 
+		for (FigureListener l : copy) { 
+			l.figureChanged(e); 
+		}
+
+	}
 
 }

@@ -122,6 +122,6 @@ public class Rect extends AbstractFigure implements Figure{
 //		for (FigureListener l : listeners) {
 //			l.figureChanged(e);
 //		}
-//	}
+	}
 
 }

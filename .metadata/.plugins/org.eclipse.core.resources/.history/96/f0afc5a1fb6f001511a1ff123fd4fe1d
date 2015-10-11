@@ -1,0 +1,7 @@
+package jdraw.std;
+
+import jdraw.framework.Figure;
+
+public abstract class AbstractFigure implements Figure {
+
+}
