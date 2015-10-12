@@ -63,6 +63,7 @@ public class LineTool extends AbstractFigureTool implements DrawTool {
 	 * @param context a context to use this tool in.
 	 */
 	public LineTool(DrawContext context) {
+		super(context);
 		this.context = context;
 		this.view = context.getView();
 	}

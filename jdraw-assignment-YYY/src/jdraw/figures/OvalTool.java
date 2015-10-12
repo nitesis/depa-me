@@ -17,6 +17,7 @@ import jdraw.framework.DrawContext;
 import jdraw.framework.DrawTool;
 import jdraw.framework.DrawView;
 import jdraw.framework.Figure;
+import jdraw.std.AbstractFigureTool;
 
 /**
  * This tool defines a mode for drawing rectangles.
@@ -26,7 +27,7 @@ import jdraw.framework.Figure;
  * @author  Christoph Denzler
  * @version 2.1, 27.09.07
  */
-public class OvalTool implements DrawTool {
+public class OvalTool extends AbstractFigureTool implements DrawTool {
   
 	/** 
 	 * the image resource path. 
@@ -64,6 +65,7 @@ public class OvalTool implements DrawTool {
 	 * @param context a context to use this tool in.
 	 */
 	public OvalTool(DrawContext context) {
+		super(context);
 		this.context = context;
 		this.view = context.getView();
 	}
@@ -73,9 +75,9 @@ public class OvalTool implements DrawTool {
 	 * and clearing the status bar.
 	 * @see jdraw.framework.DrawTool#deactivate()
 	 */
-	public void deactivate() {
-		this.context.showStatusText("");
-	}
+//	public void deactivate() {
+//		this.context.showStatusText("");
+//	}
 
 	/**
 	 * Activates the Oval Mode. There will be a
@@ -142,10 +144,10 @@ public class OvalTool implements DrawTool {
 		this.context.showStatusText("Oval Mode");
 	}
 
-	@Override
-	public Cursor getCursor() {
-		return Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR);
-	}
+//	@Override
+//	public Cursor getCursor() {
+//		return Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR);
+//	}
 	
 	@Override
 	public Icon getIcon() {

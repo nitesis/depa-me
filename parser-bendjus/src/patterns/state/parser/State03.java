@@ -10,7 +10,7 @@ public class State03 implements State {
 			m = m + State.getNumericValue(ch)/quo; 
 			quo = quo*10; 
 			// XXX hier ist wieder das return null; das falsch ist.
-			return null;
+			return this;
 		}
 		else if(ch == 'e') { 
 			return new State04(); 

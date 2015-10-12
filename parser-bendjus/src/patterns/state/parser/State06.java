@@ -3,6 +3,8 @@ package patterns.state.parser;
 public class State06 implements State {
 
 	private int exp = 0;
+	private Variable v;
+	
 
 	public State parse(char ch) {
 	if(State.isDigit(ch)) { 

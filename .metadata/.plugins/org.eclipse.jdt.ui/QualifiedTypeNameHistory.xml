@@ -22,4 +22,8 @@
 <fullyQualifiedTypeName name="java.awt.geom.Ellipse2D"/>
 <fullyQualifiedTypeName name="java.awt.geom.Ellipse2D.Double"/>
 <fullyQualifiedTypeName name="java.awt.Event"/>
+<fullyQualifiedTypeName name="jdraw.framework.Figure"/>
+<fullyQualifiedTypeName name="jdraw.std.AbstractFigure"/>
+<fullyQualifiedTypeName name="jdraw.std.AbstractFigureTool"/>
+<fullyQualifiedTypeName name="jdraw.framework.DrawTool"/>
 </qualifiedTypeNameHistroy>
