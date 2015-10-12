@@ -34,12 +34,10 @@ public class LayoutComparer extends JFrame {
 		setLayout(new GridLayout(1, 2));
 		LayoutManager m;
 //		m = new java.awt.FlowLayout();
-		m = new java.awt.BorderLayout();
+//		m = new java.awt.BorderLayout();
 
 		add(createPanel(m, "Left"));
-		//durch pack() werden Komponenten im linker Container zunächst richtig platziert...
 		pack();
-		//...anschliessend jedoch wieder überschrieben von den Komponenten des rechten Containers
 		add(createPanel(m, "Right"));
 	}
 }
