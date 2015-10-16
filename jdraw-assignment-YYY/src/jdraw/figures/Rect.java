@@ -88,7 +88,9 @@ public class Rect extends AbstractFigure implements Figure{
 	 * @see jdraw.framework.Figure#getHandles()
 	 */	
 	public List<FigureHandle> getHandles() {
-		return null;
+		List<FigureHandle> handles = new LinkedList<>(); 
+		handles.add(new NorthWestHandle(this));
+		return handles;
 	}
 
 //	@Override
