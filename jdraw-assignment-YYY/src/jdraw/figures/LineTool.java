@@ -118,8 +118,7 @@ public class LineTool extends AbstractFigureTool implements DrawTool {
 	 * @see jdraw.framework.DrawTool#mouseDrag(int, int, MouseEvent)
 	 */
 	public void mouseDrag(int x, int y, MouseEvent e) {
-		//??? Was passiert hier und warum passiert es nicht so, wie es soll???
-		
+
 		//hier wird Punkt 2 der Linie gesetzt
 		newLine.setBounds(anchor, new Point(x, y));
 		java.awt.Rectangle r = newLine.getBounds();

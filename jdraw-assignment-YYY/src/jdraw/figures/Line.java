@@ -74,14 +74,19 @@ public class Line extends AbstractFigure implements Figure {
 	// Setzt die Bounds meiner Figure nachdem die Maus gezogen wurde 
 	public Rectangle getBounds() {
 		//return line.getBounds();
-		Rectangle rec = new Rectangle((int)line.x1,(int)line.y1,(int)line.x2,(int)line.y2);
+		Point p1 = new Point((int)line.x1,(int)line.y1);
+		Point p2 = new Point((int)line.x2,(int)line.y2);
+		Rectangle rec = new Rectangle();
+		rec.setFrameFromDiagonal(p1, p2);
 		return rec.getBounds();
 	}
 
 	@Override
 	public List<FigureHandle> getHandles() {
-		// TODO Auto-generated method stub
-		return null;
+		List<FigureHandle> handles = new LinkedList<>(); 
+		handles.add(new LineHandle1(this));
+		handles.add(new LineHandle2(this));
+		return handles;
 	}
 
 //	@Override

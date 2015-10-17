@@ -99,7 +99,12 @@ public class Oval extends AbstractFigure implements Figure {
 	 * @see jdraw.framework.Figure#getHandles()
 	 */
 	public List<FigureHandle> getHandles() {
-		return null;
+		List<FigureHandle> handles = new LinkedList<>(); 
+		handles.add(new NorthHandle(this));
+		handles.add(new SouthHandle(this));
+		handles.add(new WestHandle(this));
+		handles.add(new EastHandle(this));
+		return handles;
 	}
 
 //	@Override

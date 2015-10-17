@@ -22,7 +22,6 @@ public class NorthWestHandle implements FigureHandle{
 	
 	@Override
 	public Figure getOwner() {
-		
 		return owner;
 	}
 
@@ -49,8 +48,8 @@ public class NorthWestHandle implements FigureHandle{
 	@Override
 	// gibt an, ob sich die Position (x,y) innerhalb des Handles befindet
 	public boolean contains(int x, int y) {
-		// TODO Auto-generated method stub
-		return owner.contains(x, y);
+		Rectangle rect = new Rectangle(getLocation().x - 3, getLocation().y - 3, 6, 6);
+		return rect.contains(x, y);
 	}
 
 	// Handle merkt sich bei Aufruf von startInteraction die Position der gegenüberliegenden

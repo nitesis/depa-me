@@ -90,6 +90,11 @@ public class Rect extends AbstractFigure implements Figure{
 	public List<FigureHandle> getHandles() {
 		List<FigureHandle> handles = new LinkedList<>(); 
 		handles.add(new NorthWestHandle(this));
+		handles.add(new NorthHandle(this));
+		handles.add(new NorthEastHandle(this));
+		handles.add(new SouthHandle(this));
+		handles.add(new WestHandle(this));
+		handles.add(new EastHandle(this));
 		return handles;
 	}
 
