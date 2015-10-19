@@ -1,0 +1,40 @@
+package patterns.composite;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class GroupFigure extends Figure {
+	private String name;
+	private List<Figure> figures = new LinkedList<Figure>();
+
+	public GroupFigure(String name, Figure... figures){
+		this.name = name;
+		for (Figure f : figures) {
+			try {
+				addFigure(f);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public void addFigure(Figure f) throws Exception {
+		
+		for (Figure fig : figures){
+			if (fig.equals(f)) {
+				throw new Exception("Figure allready used");
+			}
+		}
+		figures.add(f);
+		
+		
+	}
+
+	public void draw(String prefix) {
+		System.out.println(prefix + name);
+		for (Figure f : figures) {
+			f.draw(prefix + ">>");
+		}
+	}
+}
