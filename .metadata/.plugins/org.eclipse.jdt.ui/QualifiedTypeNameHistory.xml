@@ -14,8 +14,6 @@
 <fullyQualifiedTypeName name="jdraw.framework.FigureListener"/>
 <fullyQualifiedTypeName name="jdraw.framework.DrawModelEvent"/>
 <fullyQualifiedTypeName name="jdraw.framework.DrawModelEvent.Type"/>
-<fullyQualifiedTypeName name="java.awt.Rectangle"/>
-<fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="java.awt.geom.Line2D.Double"/>
 <fullyQualifiedTypeName name="jdraw.figures.LineTool"/>
 <fullyQualifiedTypeName name="jdraw.figures.OvalTool"/>
@@ -26,4 +24,7 @@
 <fullyQualifiedTypeName name="jdraw.std.AbstractFigure"/>
 <fullyQualifiedTypeName name="jdraw.std.AbstractFigureTool"/>
 <fullyQualifiedTypeName name="jdraw.framework.DrawTool"/>
+<fullyQualifiedTypeName name="jdraw.framework.FigureHandle"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="java.awt.Rectangle"/>
 </qualifiedTypeNameHistroy>
