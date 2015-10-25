@@ -7,17 +7,21 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 
+import com.sun.javafx.geom.Line2D;
+
 import jdraw.framework.DrawView;
 import jdraw.framework.Figure;
 import jdraw.framework.FigureHandle;
 
 public class LineHandle2 implements FigureHandle{
 
-	private Figure owner; 
+	private Line owner;
+	private Line2D line;
 	private Point corner;
 	
-	public LineHandle2 (Figure figure) {
+	public LineHandle2 (Line figure) {
 		owner = figure;
+		line = owner.getLine();
 	}
 	
 	@Override
@@ -30,9 +34,7 @@ public class LineHandle2 implements FigureHandle{
 	// Jetzt soll die Position unten mitte zurückgegeben werden
 	public Point getLocation() {
 		Point p;
-		p = owner.getBounds().getLocation();
-		p.x = p.x + owner.getBounds().width;
-		p.y = p.y + owner.getBounds().height;
+		p = new Point((int) line.x2, (int) line.y2);
 		return p;
 	}
 
@@ -58,15 +60,12 @@ public class LineHandle2 implements FigureHandle{
 
 	@Override
 	public void startInteraction(int x, int y, MouseEvent e, DrawView v) {
-		Rectangle r = owner.getBounds();
-//		Line l = owner.getBounds().
-		corner = new Point(r.x, r.y);
+		corner = new Point((int) line.x1, (int) line.y1);
 	}
 
 	@Override
 	public void dragInteraction(int x, int y, MouseEvent e, DrawView v) {
-		Rectangle r = owner.getBounds();
-		
+
 		owner.setBounds(corner, new Point(x, y));
 	}
 
