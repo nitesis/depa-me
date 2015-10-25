@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;jdraw-assignment-YYY&apos;" deleteContents="false" description="Delete resource &apos;jdraw-assignment-YYY&apos;" element1="/jdraw-assignment-YYY" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1445784529494"/>
+</session>

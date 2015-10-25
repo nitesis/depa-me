@@ -16,6 +16,10 @@ public class LineHandle1 implements FigureHandle{
 	private Figure owner; 
 	private Point corner;
 	
+	// XXX ein Tipp (oder Trick) ist vielleicht der, dass Sie hier den Parameter als vom Typ Figure deklarieren könenn (und auch 
+	//     die Variable owner), denn dieser Handle kann ja NUR mit Linien verwendet werden. Dann können Sie auch auf das
+	//     Feld owner.line bzw. owner.line.x1/y1/x2/y2 zugreifen, oder sie können auf zusätzliche Methoden zugreifen die sie
+	//     in der Klasse Line definieren, z.B. eine Methode getStartPoint() und eine Methode getEndPoint().
 	public LineHandle1 (Figure figure) {
 		owner = figure;
 	}
@@ -29,6 +33,7 @@ public class LineHandle1 implements FigureHandle{
 	// Standardmässig wird Position der oberen linken Ecke zurückgegeben
 	// Jetzt soll die Position unten mitte zurückgegeben werden
 	public Point getLocation() {
+		// XXX hier könnten Sie dann entweder auf getStartPoint() oder getEndPoint() zugreifen.
 		Point p;
 		p = owner.getBounds().getLocation();
 //		p.x = p.x + owner.getBounds().width;
@@ -58,7 +63,10 @@ public class LineHandle1 implements FigureHandle{
 
 	@Override
 	public void startInteraction(int x, int y, MouseEvent e, DrawView v) {
+		// XXX Hier können Sie auf line.getEndPoint() zugreifen, aber sie können auch diese Methode leer lassen und dann im
+		//     dragInteraction jeweils auf owner.line.getEndPoint() zugreifen.
 		Rectangle r = owner.getBounds();
+		// XXX mit dem getBounds() geht es definitiv nicht, da sie so jetzt nicht wissen ob die Line von oben links nach untern rechts oder von oben rechts nach unten links verläuft.
 //		Line l = owner.getBounds().
 		corner = new Point(r.x + r.width, r.y + r.height);
 	}

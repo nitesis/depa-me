@@ -13,6 +13,7 @@ import jdraw.framework.FigureHandle;
 
 public class EastHandle implements FigureHandle{
 
+	// XXX genereller Kommentar: Ihre Handle-Klassen ähneln einander, daher könnte man hier gut eine abstrakte Basiskasse einziehen.
 	private Figure owner; 
 	private Point corner;
 	
@@ -28,6 +29,7 @@ public class EastHandle implements FigureHandle{
 	@Override
 	// Standardmässig wird Position der oberen linken Ecke zurückgegeben
 	// Jetzt soll die Position unten mitte zurückgegeben werden
+	// XXX was heisst "standardmässig"? Da es keine abstrakte Basisklasse gibt, gibt es auch keinen "Standard".
 	public Point getLocation() {
 		Point p;
 		p = owner.getBounds().getLocation();

@@ -16,4 +16,5 @@ public class OvalFigure extends Figure {
 		
 	}
 	
+	public remove
 }

@@ -1,8 +1,0 @@
-package jdraw.std;
-
-import jdraw.framework.Figure;
-
-public abstract class AbstractFigure implements Figure {
-
-	public Figure clone() { return null; }
-}

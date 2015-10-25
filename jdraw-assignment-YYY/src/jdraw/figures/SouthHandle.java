@@ -65,6 +65,12 @@ public class SouthHandle implements FigureHandle{
 	@Override
 	public void dragInteraction(int x, int y, MouseEvent e, DrawView v) {
 		Rectangle r = owner.getBounds();
+		// XXX der erste Parameter im setBounds ist falsch. Hier dürfen SIe nicht auf die Bounds der Figur zurückgreifen, denn diese wird ja gerade
+		//     verändert. Das geht zwar gut solange der untere Rand nicht über den oberen Rand geschoben wird. Sie müssen Sich also im mouseDown den
+		//     Punkt (x,y), also owner.getBounds().getLocation() merken (kopie), wie sie das auch bei den anderen Handles gemacht haben. 
+		//     Und das was sie jetzt als corner.x verwenden, das muss natürich auch gespeichert werden, vielleicht in einer int-Variablen.
+		//     Diesen Wert könnten Sie aber über das getBounds des Owners abholen, denn diese Koordinate ändert sich ja nie (so haben sie es
+		//     im NorthHandle, WestHandle und EastHandle gemacht.
 		owner.setBounds(owner.getBounds().getLocation(), new Point(corner.x, y));
 	}
 
