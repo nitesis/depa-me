@@ -27,4 +27,8 @@
 <fullyQualifiedTypeName name="jdraw.framework.FigureHandle"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="java.awt.Rectangle"/>
+<fullyQualifiedTypeName name="java.awt.geom.Line2D"/>
+<fullyQualifiedTypeName name="com.sun.javafx.geom.Line2D"/>
+<fullyQualifiedTypeName name="jdraw.framework.PointConstrainer"/>
+<fullyQualifiedTypeName name="jdraw.grid.SimpleGrid"/>
 </qualifiedTypeNameHistroy>

@@ -8,14 +8,14 @@ public class SimpleGrid implements PointConstrainer{
 
 	@Override
 	public Point constrainPoint(Point p) {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("SimpleGrid:constrainPoint: " + p); 
+		return p;
 	}
 
 	@Override
 	public int getStepX(boolean right) {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println("SimpleGrid:getStepX: " + 1);
+		return 1;
 	}
 
 	@Override
@@ -26,26 +26,22 @@ public class SimpleGrid implements PointConstrainer{
 
 	@Override
 	public void activate() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("SimpleGrid:activate()");
 	}
 
 	@Override
 	public void deactivate() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("SimpleGrid:deactivate()");
 	}
 
 	@Override
 	public void mouseDown() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("SimpleGrid:mouseDown()");
 	}
 
 	@Override
 	public void mouseUp() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("SimpleGrid:mouseUp()");
 	}
 
 }
