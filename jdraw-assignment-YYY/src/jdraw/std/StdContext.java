@@ -139,24 +139,26 @@ public class StdContext extends AbstractContext {
 		grid.add("Grid 3");
 		editMenu.add(grid);
 		
+		JMenuItem noGrid = new JMenuItem("Without Grid");
+		// Was genau ist jetzt hier der Vorteil?
+		noGrid.addActionListener(e -> getView().setConstrainer(null)); 
+		grid.add(noGrid);
+		
 		JMenuItem simpleGrid10 = new JMenuItem("Simple Grid 10 x 10");
-		// Event e holt sich aktuellen View und setzt den Constrainer für SimpleGrid
+		// Event e holt sich aktuellen View und setzt den Constrainer für SimpleGrid10
 		simpleGrid10.addActionListener(e -> getView().setConstrainer(new GridConstrainer(10, 10))); 
 		grid.add(simpleGrid10);
-		getView().setConstrainer(null);
 		
 		JMenuItem simpleGrid20 = new JMenuItem("Simple Grid 20 x 20");
-		// Event e holt sich aktuellen View und setzt den Constrainer für SimpleGrid
+		// Event e holt sich aktuellen View und setzt den Constrainer für SimpleGrid20
 		simpleGrid20.addActionListener(e -> getView().setConstrainer(new GridConstrainer(20, 20))); 
 		grid.add(simpleGrid20);
-		getView().setConstrainer(null);
 		
 		JMenuItem simpleGrid50 = new JMenuItem("Simple Grid 50 x 50");
-		// Event e holt sich aktuellen View und setzt den Constrainer für SimpleGrid
+		// Event e holt sich aktuellen View und setzt den Constrainer für SimpleGrid50
+		// Event wird immer dann ausgelöst, wenn neuer GridConstrainer gesetzt wird
 		simpleGrid50.addActionListener(e -> getView().setConstrainer(new GridConstrainer(50, 50))); 
 		grid.add(simpleGrid50);
-		getView().setConstrainer(null);
-
 		
 		return editMenu;
 	}

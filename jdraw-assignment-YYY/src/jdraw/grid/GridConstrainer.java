@@ -20,12 +20,14 @@ public class GridConstrainer implements PointConstrainer{
 		//System.out.println("SimpleGrid:constrainPoint: " + p); 
 	}
 
+	//wird hier nicht gebraucht
 	@Override
 	public int getStepX(boolean right) {
-		System.out.println("SimpleGrid:getStepX: " + 1);
+		//System.out.println("SimpleGrid:getStepX: " + 1);
 		return stepX;
 	}
 
+	//wird hier nicht gebraucht
 	@Override
 	public int getStepY(boolean down) {
 		// TODO Auto-generated method stub
@@ -34,12 +36,12 @@ public class GridConstrainer implements PointConstrainer{
 
 	@Override
 	public void activate() {
-		System.out.println("SimpleGrid:activate()");
+		System.out.println("SimpleGrid " + getStepX(true) + " :activate()");
 	}
 
 	@Override
 	public void deactivate() {
-		System.out.println("SimpleGrid:deactivate()");
+		System.out.println("SimpleGrid " + getStepX(true) + " :deactivate()");
 	}
 
 	@Override
