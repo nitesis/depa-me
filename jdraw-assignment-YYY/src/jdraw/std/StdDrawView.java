@@ -353,6 +353,7 @@ public final class StdDrawView extends JComponent implements DrawView {
 				context.getTool().mouseDrag(p.x, p.y, e);
 			} else if ((e.getModifiers() & InputEvent.BUTTON1_MASK) != 0) {
 				model.getDrawCommandHandler().beginScript();
+				//Was genau macht das??? Ruft mouseDown von z.B Rectangle auf, oder was???
 				context.getTool().mouseDown(p.x, p.y, e);
 			}
 			dragging++;

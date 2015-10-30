@@ -25,7 +25,7 @@ import jdraw.framework.DrawTool;
 import jdraw.framework.DrawToolFactory;
 import jdraw.framework.DrawView;
 import jdraw.framework.Figure;
-import jdraw.grid.SimpleGrid;
+import jdraw.grid.GridConstrainer;
 
 /**
  * Standard implementation of interface DrawContext.
@@ -139,9 +139,29 @@ public class StdContext extends AbstractContext {
 		grid.add("Grid 3");
 		editMenu.add(grid);
 		
+		JMenuItem simpleGrid10 = new JMenuItem("Simple Grid 10 x 10");
+		// Event e holt sich aktuellen View und setzt den Constrainer für SimpleGrid
+		simpleGrid10.addActionListener(e -> getView().setConstrainer(new GridConstrainer(10, 10))); 
+		grid.add(simpleGrid10);
+		getView().setConstrainer(null);
+		
+		JMenuItem simpleGrid20 = new JMenuItem("Simple Grid 20 x 20");
+		// Event e holt sich aktuellen View und setzt den Constrainer für SimpleGrid
+		simpleGrid20.addActionListener(e -> getView().setConstrainer(new GridConstrainer(20, 20))); 
+		grid.add(simpleGrid20);
+		getView().setConstrainer(null);
+		
+		JMenuItem simpleGrid50 = new JMenuItem("Simple Grid 50 x 50");
+		// Event e holt sich aktuellen View und setzt den Constrainer für SimpleGrid
+		simpleGrid50.addActionListener(e -> getView().setConstrainer(new GridConstrainer(50, 50))); 
+		grid.add(simpleGrid50);
+		getView().setConstrainer(null);
+
+		
 		return editMenu;
 	}
 
+	
 	/**
 	 * Creates and initializes items in the file menu.
 	 * 
@@ -176,10 +196,6 @@ public class StdContext extends AbstractContext {
 			}
 		});
 		
-		JMenuItem simpleGrid = new JMenuItem("Simple Grid"); 
-		simpleGrid.addActionListener(e -> getView().setConstrainer(new SimpleGrid())); 
-		grid.add(simpleGrid);
-
 		
 		return fileMenu;
 	}
