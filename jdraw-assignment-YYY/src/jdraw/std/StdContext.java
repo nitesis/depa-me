@@ -26,6 +26,7 @@ import jdraw.framework.DrawToolFactory;
 import jdraw.framework.DrawView;
 import jdraw.framework.Figure;
 import jdraw.grid.GridConstrainer;
+import jdraw.grid.SnapGridHandler;
 
 /**
  * Standard implementation of interface DrawContext.
@@ -159,6 +160,10 @@ public class StdContext extends AbstractContext {
 		// Event wird immer dann ausgelöst, wenn neuer GridConstrainer gesetzt wird
 		simpleGrid50.addActionListener(e -> getView().setConstrainer(new GridConstrainer(50, 50))); 
 		grid.add(simpleGrid50);
+		
+		JMenuItem snapGrid = new JMenuItem("Snap Grid");
+		snapGrid.addActionListener(e -> getView().setConstrainer(new SnapGridHandler(this.getView()))); 
+		grid.add(snapGrid);
 		
 		return editMenu;
 	}

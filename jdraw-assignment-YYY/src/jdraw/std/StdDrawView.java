@@ -147,6 +147,7 @@ public final class StdDrawView extends JComponent implements DrawView {
 	 * @return a point that is the result of constraining p, ie. the new
 	 *         location of p according to the constrainer.
 	 */
+	//Hier passiert z.B. das Snap beim Grid
 	private Point constrainPoint(Point p, int mode) {
 		if (constrainer != null) {
 			if (mode == 1) { constrainer.mouseDown(); }
