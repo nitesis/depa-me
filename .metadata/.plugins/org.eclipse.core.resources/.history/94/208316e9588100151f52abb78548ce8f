@@ -13,17 +13,16 @@ public class Dictionary implements Cloneable {
 			this.words[i] = "sample word " + i;
 	}
 	
-	//Copy-Konstruktor: Time used: 0.061
 	public Dictionary(Dictionary dict) {
 		language = dict.language;
 		size = dict.size;
 		words = new String[dict.size];
 		for (int i = 0; i < size; i++)
-			this.words[i] = dict.words[i];
+			this.words[i] = "sample copy word " + i;
 	}
 
 //	@Override
-	//Java Cloning: Time used: 0.025
+	//Time used: 0.025
 //	public Object clone() {
 //		try {
 //			Dictionary d = (Dictionary) super.clone();
@@ -37,6 +36,7 @@ public class Dictionary implements Cloneable {
 //	}
 	
 	@Override
+	//Time used: 0.405
 	public Object clone() { // Variante mit Copy-Konstruktoren
 		return new Dictionary(this);
 	}
