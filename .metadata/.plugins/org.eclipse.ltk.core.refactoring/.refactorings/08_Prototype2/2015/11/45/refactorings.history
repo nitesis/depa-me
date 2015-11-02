@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MutableLine.java&apos; to &apos;patterns.clone.immutable.MutableLine.java&apos;&#x0A;- Original project: &apos;08_Prototype2&apos;&#x0A;- Destination element: &apos;patterns.clone.immutable.MutableLine.java&apos;&#x0A;- Original element: &apos;patterns.clone.immutable.MutableLine.java&apos;" description="Copy compilation unit" destination="/src&lt;patterns.clone.immutable{MutableLine.java" element1="/src&lt;patterns.clone.immutable{MutableLine.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1446471090553" units="1" version="1.0"/>
+</session>

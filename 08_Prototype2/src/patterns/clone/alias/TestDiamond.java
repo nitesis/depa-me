@@ -16,23 +16,39 @@ public class TestDiamond {
 			this.right = right;
 		}
 
-		public Object clone() {
-			try {
-				Node c = (Node) super.clone();
-				if (c.left != null)
-					c.left = (Node) c.left.clone();
-				if (c.right != null)
-					c.right = (Node) c.right.clone();
-				return c;
-			} catch (CloneNotSupportedException e) {
-				throw new InternalError();
-			}
-		}
+//		//Java Cloning
+//		public Object clone() {
+//			try {
+//				Node c = (Node) super.clone();
+//				if (c.left != null)
+//					c.left = (Node) c.left.clone();
+//				if (c.right != null)
+//					c.right = (Node) c.right.clone();
+//				return c;
+//			} catch (CloneNotSupportedException e) {
+//				throw new InternalError();
+//			}
+//		}
 
 		public Node getLeft() {  return left; }
 		public Node getRight() { return right; }
 		public int getVal() { return val; }
+		
+		//Copy Ctor Cloning
+		public Object clone() {
+			return new Node(this);
+		}
+				
+		public Node(Node node) {
+			val = node.val;
+			left = node.left;
+			right = node.right;
+		}
 	}
+	
+
+	
+
 
 	public static void main(String[] args) {
 		Node n4 = new Node(4, null, null);
