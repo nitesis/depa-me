@@ -11,7 +11,6 @@
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="jdraw.framework.FigureListener"/>
-<fullyQualifiedTypeName name="jdraw.framework.DrawModelEvent"/>
 <fullyQualifiedTypeName name="jdraw.framework.DrawModelEvent.Type"/>
 <fullyQualifiedTypeName name="java.awt.geom.Line2D.Double"/>
 <fullyQualifiedTypeName name="jdraw.figures.LineTool"/>
@@ -19,16 +18,21 @@
 <fullyQualifiedTypeName name="java.awt.geom.Ellipse2D"/>
 <fullyQualifiedTypeName name="java.awt.geom.Ellipse2D.Double"/>
 <fullyQualifiedTypeName name="java.awt.Event"/>
-<fullyQualifiedTypeName name="jdraw.framework.Figure"/>
 <fullyQualifiedTypeName name="jdraw.std.AbstractFigure"/>
 <fullyQualifiedTypeName name="jdraw.std.AbstractFigureTool"/>
 <fullyQualifiedTypeName name="jdraw.framework.DrawTool"/>
-<fullyQualifiedTypeName name="jdraw.framework.FigureHandle"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="java.awt.Rectangle"/>
 <fullyQualifiedTypeName name="java.awt.geom.Line2D"/>
 <fullyQualifiedTypeName name="com.sun.javafx.geom.Line2D"/>
-<fullyQualifiedTypeName name="jdraw.framework.PointConstrainer"/>
 <fullyQualifiedTypeName name="jdraw.grid.SimpleGrid"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="jdraw.grid.GridConstrainer"/>
+<fullyQualifiedTypeName name="jdraw.framework.PointConstrainer"/>
+<fullyQualifiedTypeName name="jdraw.framework.DrawView"/>
+<fullyQualifiedTypeName name="jdraw.framework.Figure"/>
+<fullyQualifiedTypeName name="jdraw.framework.FigureHandle"/>
+<fullyQualifiedTypeName name="jdraw.framework.DrawModelListener"/>
+<fullyQualifiedTypeName name="jdraw.grid.SnapGridHandler"/>
+<fullyQualifiedTypeName name="jdraw.framework.DrawModelEvent"/>
 </qualifiedTypeNameHistroy>
