@@ -1,9 +1,9 @@
 package patterns.observer.bag;
 
-public class AdderObserver implements Observer {
+public class AdderObserver implements java.util.Observer {
 
 	@Override
-	public void update(Observable source) {
+	public void update(java.util.Observable source, Object arg) {
 		IntegerBag bag = (IntegerBag) source;
 
 		int sum = 0;
@@ -14,4 +14,5 @@ public class AdderObserver implements Observer {
 		System.out.println("Content has changed: new sum is " + sum);
 	}
 
+	
 }

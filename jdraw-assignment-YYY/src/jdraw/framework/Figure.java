@@ -20,6 +20,7 @@ import java.util.List;
  */
 public interface Figure extends Serializable, Cloneable {
 
+	
 	/**
 	 * draw is called when the figure has to be drawn.
 	 * 

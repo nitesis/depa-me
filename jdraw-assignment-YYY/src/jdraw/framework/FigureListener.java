@@ -21,6 +21,7 @@ public interface FigureListener extends EventListener {
 	 * Sent when a figure has changed.
 	 * 
 	 * @param e figure event
+	 * figureChanged ist gleichbedeutend mit update() im ObserverPattern
 	 */
 	void figureChanged(FigureEvent e);
 }
