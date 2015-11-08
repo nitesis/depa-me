@@ -60,7 +60,7 @@ public class Rect extends AbstractFigure implements Figure{
 	public void setBounds(Point origin, Point corner) {
 		rectangle.setFrameFromDiagonal(origin, corner);
 		// XXX Notifikation eingentlich nur falls sich die Figur geändert hat.
-		update(new FigureEvent(this));
+		notifyListener(new FigureEvent(this));
 	}
 
 	@Override
@@ -68,7 +68,7 @@ public class Rect extends AbstractFigure implements Figure{
 		if(dx != 0 || dy != 0) {
 		rectangle.setLocation(rectangle.x + dx, rectangle.y + dy);
 		
-		update(new FigureEvent(this));
+		notifyListener(new FigureEvent(this));
 		}		
 	}
 

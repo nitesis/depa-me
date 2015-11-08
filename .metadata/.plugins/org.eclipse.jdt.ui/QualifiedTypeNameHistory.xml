@@ -35,4 +35,7 @@
 <fullyQualifiedTypeName name="jdraw.framework.DrawModelListener"/>
 <fullyQualifiedTypeName name="jdraw.grid.SnapGridHandler"/>
 <fullyQualifiedTypeName name="jdraw.framework.DrawModelEvent"/>
+<fullyQualifiedTypeName name="javafx.beans.Observable"/>
+<fullyQualifiedTypeName name="java.util.Observable"/>
+<fullyQualifiedTypeName name="javax.swing.WindowConstants"/>
 </qualifiedTypeNameHistroy>

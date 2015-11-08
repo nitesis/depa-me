@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;jdraw.std.AbstractFigure.update(...)&apos; to &apos;notifyListener&apos;&#x0A;- Original project: &apos;jdraw-assignment-YYY&apos;&#x0A;- Original element: &apos;jdraw.std.AbstractFigure.update(...)&apos;&#x0A;- Renamed element: &apos;jdraw.std.AbstractFigure.notifyListener(...)&apos;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;update&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;jdraw.std{AbstractFigure.java[AbstractFigure~update~QFigureEvent;" name="notifyListener" references="true" stamp="1446822390179" version="1.0"/>
+</session>

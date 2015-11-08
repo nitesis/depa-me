@@ -23,7 +23,8 @@ public abstract class AbstractFigure extends Observable implements Figure {
 	public Figure clone() { return null; }
 	
 	//ist jetzt nicht mehr private, sondern public
-	public void update(FigureEvent e) {
+	// besser notifyListener
+	public void notifyListener(FigureEvent e) {
 		
 		FigureListener[] copy;
 		// ???Warum hier synchronized???

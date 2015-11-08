@@ -66,7 +66,7 @@ public class Oval extends AbstractFigure implements Figure {
 
 		oval.setFrameFromDiagonal(origin, corner);
 		// XXX Notifikation eingentlich nur falls sich die Figur geändert hat.
-		update(new FigureEvent(this));
+		notifyListener(new FigureEvent(this));
 	}
 
 	@Override
@@ -75,7 +75,7 @@ public class Oval extends AbstractFigure implements Figure {
 			oval.setFrameFromDiagonal(oval.getX() + dx, oval.getY() + dy, oval.getX() + oval.getWidth() + dx,
 					oval.getY() + oval.getHeight() + dy);
 
-			update(new FigureEvent(this));
+			notifyListener(new FigureEvent(this));
 		}
 	}
 
