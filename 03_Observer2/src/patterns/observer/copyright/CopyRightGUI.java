@@ -25,8 +25,9 @@ class CopyRightGUI extends JFrame {
 		final TextModel m = new TextModel();
 		CorrectionListener cl = new CorrectionListener(m);
 		TextListener tl = new TextListener();
-		m.addListener(cl);
 		m.addListener(tl);
+		m.addListener(cl);
+//		m.addListener(tl);
 		int pos = 0;
 		for(char ch : given.toCharArray()) m.insert(pos++, ch);
 		setLayout(new GridLayout(2, 2, 8, 0));
