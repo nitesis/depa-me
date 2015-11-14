@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;Line.java&apos; to &apos;jdraw-assignment-XXX/src/jdraw.figures&apos;&#x0A;- Original project: &apos;jdraw-assignment&apos;&#x0A;- Destination element: &apos;jdraw-assignment-XXX/src/jdraw.figures&apos;&#x0A;- Original element: &apos;jdraw.framework.Line.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=jdraw-assignment-XXX/src&lt;jdraw.figures" element1="/src&lt;jdraw.framework{Line.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1443786487604" units="1" version="1.0"/>
-</session>
