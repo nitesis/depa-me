@@ -100,7 +100,7 @@ public class RectTool extends AbstractFigureTool implements DrawTool {
 			throw new IllegalStateException();
 		}
 		anchor = new Point(x, y);
-		newRect = new Rect(x, y, 0, 0);
+		newRect = new Rect(x, y);
 		view.getModel().addFigure(newRect);
 	}
 

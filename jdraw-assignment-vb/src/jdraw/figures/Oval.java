@@ -18,6 +18,7 @@ import jdraw.framework.FigureEvent;
 import jdraw.framework.FigureHandle;
 import jdraw.framework.FigureListener;
 import jdraw.std.AbstractFigure;
+import jdraw.std.AbstractRectangularFigure;
 
 /**
  * Represents rectangles in JDraw.
@@ -25,7 +26,7 @@ import jdraw.std.AbstractFigure;
  * @author Christoph Denzler
  *
  */
-public class Oval extends AbstractFigure implements Figure {
+public class Oval extends AbstractRectangularFigure {
 	/**
 	 * Use the java.awt.Rectangle in order to save/reuse code.
 	 */
@@ -45,7 +46,7 @@ public class Oval extends AbstractFigure implements Figure {
 	 *            the rectangle's height
 	 */
 	public Oval(int x, int y, int w, int h) {
-		oval = new java.awt.geom.Ellipse2D.Double(x, y, w, h);
+		super(new Point(x, y));
 	}
 
 	/**
@@ -61,36 +62,36 @@ public class Oval extends AbstractFigure implements Figure {
 		g.drawOval((int) oval.getX(), (int) oval.getY(), (int) oval.getWidth(), (int) oval.getHeight());
 	}
 
-	@Override
-	public void setBounds(Point origin, Point corner) {
-
-		oval.setFrameFromDiagonal(origin, corner);
-		// XXX Notifikation eingentlich nur falls sich die Figur geändert hat.
-		notifyListener(new FigureEvent(this));
-	}
-
-	@Override
-	public void move(int dx, int dy) {
-		if (dx != 0 || dy != 0) {
-			oval.setFrameFromDiagonal(oval.getX() + dx, oval.getY() + dy, oval.getX() + oval.getWidth() + dx,
-					oval.getY() + oval.getHeight() + dy);
-
-			notifyListener(new FigureEvent(this));
-		}
-	}
-
-	@Override
-	public boolean contains(int x, int y) {
-		return oval.contains(x, y);
-	}
-
-	@Override
-	public Rectangle getBounds() {
-		Rectangle rec = new Rectangle((int) oval.getX(), (int) oval.getY(), (int) oval.getWidth(),
-				(int) oval.getHeight());
-		return rec.getBounds();
-		// return oval.getBounds();
-	}
+//	@Override
+//	public void setBounds(Point origin, Point corner) {
+//
+//		oval.setFrameFromDiagonal(origin, corner);
+//		// XXX Notifikation eingentlich nur falls sich die Figur geändert hat.
+//		notifyListener(new FigureEvent(this));
+//	}
+//
+//	@Override
+//	public void move(int dx, int dy) {
+//		if (dx != 0 || dy != 0) {
+//			oval.setFrameFromDiagonal(oval.getX() + dx, oval.getY() + dy, oval.getX() + oval.getWidth() + dx,
+//					oval.getY() + oval.getHeight() + dy);
+//
+//			notifyListener(new FigureEvent(this));
+//		}
+//	}
+//
+//	@Override
+//	public boolean contains(int x, int y) {
+//		return oval.contains(x, y);
+//	}
+//
+//	@Override
+//	public Rectangle getBounds() {
+//		Rectangle rec = new Rectangle((int) oval.getX(), (int) oval.getY(), (int) oval.getWidth(),
+//				(int) oval.getHeight());
+//		return rec.getBounds();
+//		// return oval.getBounds();
+//	}
 
 	/**
 	 * Returns a list of 8 handles for this Rectangle.

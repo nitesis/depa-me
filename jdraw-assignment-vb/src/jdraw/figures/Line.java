@@ -53,8 +53,8 @@ public class Line extends AbstractFigure implements Figure {
 	public void move(int dx, int dy) {
 		if(dx != 0 || dy != 0) {
 			line.setLine(line.x1 + dx, line.y1 + dy, line.x2 + dx, line.y2 + dy);
-			
-			notifyListener(new FigureEvent(this));
+			propagateFigureEvent();
+//			notifyListener(new FigureEvent(this));
 			}	
 		
 	}
@@ -69,7 +69,8 @@ public class Line extends AbstractFigure implements Figure {
 	// Erstellt eine Linie anhand zweier gegebener Punkte
 	public void setBounds(Point origin, Point corner) {
 		line.setLine(origin.x, origin.y, corner.x, corner.y);
-		notifyListener(new FigureEvent(this));
+		propagateFigureEvent();
+//		notifyListener(new FigureEvent(this));
 	}
 
 	@Override
