@@ -1,0 +1,54 @@
+package jdraw.std;
+
+import java.awt.Graphics;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.util.List;
+
+import jdraw.framework.FigureHandle;
+
+public class AbstractRectangularFigure extends AbstractFigure{
+
+	private Rectangle rectangle = null;
+	
+	protected AbstractRectangularFigure(Point origin) {
+		rectangle = new Rectangle(origin);
+	}
+	
+	@Override
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void move(int dx, int dy) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean contains(int x, int y) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void setBounds(Point origin, Point corner) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Rectangle getBounds() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<FigureHandle> getHandles() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
