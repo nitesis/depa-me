@@ -27,10 +27,16 @@ import jdraw.std.AbstractRectangularFigure;
  *
  */
 public class Rect extends AbstractRectangularFigure implements Figure{
+	
+//	protected Rect(Point origin) {
+//		super(origin);
+//		// TODO Auto-generated constructor stub
+//	}
+
 	/**
 	 * Use the java.awt.Rectangle in order to save/reuse code.
 	 */
-	private java.awt.Rectangle rectangle;
+//	private java.awt.Rectangle rectangle;
 	private List<FigureListener> listeners = new LinkedList<>();
 	
 	/**
@@ -41,7 +47,18 @@ public class Rect extends AbstractRectangularFigure implements Figure{
 	 * @param h the rectangle's height
 	 */
 	public Rect(int x, int y) {
+		this(x, y, 0, 0);
+	}
+	/**
+	 * Create a new rectangle of the given dimension.
+	 * @param x the x-coordinate of the upper left corner of the rectangle
+	 * @param y the y-coordinate of the upper left corner of the rectangle
+	 * @param w the rectangle's width
+	 * @param h the rectangle's height
+	 */
+	public Rect(int x, int y, int w, int h) {
 		super(new Point(x, y));
+		this.setBounds(new Point(x, y), new Point(x + w, y + h));
 	}
 
 	/**
@@ -49,12 +66,13 @@ public class Rect extends AbstractRectangularFigure implements Figure{
 	 * @param g the graphics context to use for drawing.
 	 */
 	public void draw(Graphics g) {
+		Rectangle bounds = g.getClipBounds();
 		g.setColor(Color.WHITE);
-		g.fillRect(rectangle.x, rectangle.y, 
-							 rectangle.width, rectangle.height);
+		g.fillRect(bounds.x, bounds.y, 
+				bounds.width, bounds.height);
 		g.setColor(Color.BLACK);
-		g.drawRect(rectangle.x, rectangle.y, 
-							 rectangle.width, rectangle.height);
+		g.drawRect(bounds.x, bounds.y, 
+				bounds.width, bounds.height);
 	}
 	
 //	@Override

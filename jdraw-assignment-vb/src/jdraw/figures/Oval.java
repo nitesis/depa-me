@@ -30,7 +30,7 @@ public class Oval extends AbstractRectangularFigure {
 	/**
 	 * Use the java.awt.Rectangle in order to save/reuse code.
 	 */
-	private java.awt.geom.Ellipse2D oval;
+//	private java.awt.geom.Ellipse2D oval;
 	private List<FigureListener> listeners = new LinkedList<>();
 
 	/**
@@ -56,10 +56,11 @@ public class Oval extends AbstractRectangularFigure {
 	 *            the graphics context to use for drawing.
 	 */
 	public void draw(Graphics g) {
+		Rectangle bounds = g.getClipBounds();
 		g.setColor(Color.GRAY);
-		g.fillOval((int) oval.getX(), (int) oval.getY(), (int) oval.getWidth(), (int) oval.getHeight());
+		g.fillOval((int) bounds.getX(), (int) bounds.getY(), (int) bounds.getWidth(), (int) bounds.getHeight());
 		g.setColor(Color.PINK);
-		g.drawOval((int) oval.getX(), (int) oval.getY(), (int) oval.getWidth(), (int) oval.getHeight());
+		g.drawOval((int) bounds.getX(), (int) bounds.getY(), (int) bounds.getWidth(), (int) bounds.getHeight());
 	}
 
 //	@Override

@@ -9,11 +9,18 @@ import jdraw.framework.FigureHandle;
 
 public abstract class AbstractRectangularFigure extends AbstractFigure {
 
-	private Rectangle rectangle = null;
+	private java.awt.Rectangle rectangle = null;
 
 	protected AbstractRectangularFigure(Point origin) {
-		rectangle = new Rectangle(origin);
+//		Erzeugt Rechteck der Breite und Höhe = null
+		rectangle = new Rectangle(new Point(origin));
+		
+
 	}
+//	NEU!
+//	public AbstractRectangularFigure(int x, int y) {
+//		rectangle = new Rectangle(new Point(x, y));
+//	}
 
 	@Override
 	public abstract void draw(Graphics g);

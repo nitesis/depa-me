@@ -16,7 +16,7 @@ public class RectangleTest {
 
 	@Before
 	public void setUp() {
-//		f = new jdraw.figures.Rect(0, 0, 20, 10);
+		f = new jdraw.figures.Rect(0, 0, 20, 10);
 		cnt = 0;
 	}
 
