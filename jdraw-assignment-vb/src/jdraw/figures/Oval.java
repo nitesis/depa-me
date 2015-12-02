@@ -56,11 +56,15 @@ public class Oval extends AbstractRectangularFigure {
 	 *            the graphics context to use for drawing.
 	 */
 	public void draw(Graphics g) {
-		Rectangle bounds = g.getClipBounds();
-		g.setColor(Color.GRAY);
-		g.fillOval((int) bounds.getX(), (int) bounds.getY(), (int) bounds.getWidth(), (int) bounds.getHeight());
-		g.setColor(Color.PINK);
-		g.drawOval((int) bounds.getX(), (int) bounds.getY(), (int) bounds.getWidth(), (int) bounds.getHeight());
+		Rectangle r = getBounds(); 
+		g.setColor(Color.black); 
+		g.drawOval(r.x, r.y, r.width, r.height);
+		
+//		Rectangle bounds = g.getClipBounds();
+//		g.setColor(Color.GRAY);
+//		g.fillOval((int) bounds.getX(), (int) bounds.getY(), (int) bounds.getWidth(), (int) bounds.getHeight());
+//		g.setColor(Color.PINK);
+//		g.drawOval((int) bounds.getX(), (int) bounds.getY(), (int) bounds.getWidth(), (int) bounds.getHeight());
 	}
 
 //	@Override
