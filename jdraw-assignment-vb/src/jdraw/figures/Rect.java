@@ -66,13 +66,9 @@ public class Rect extends AbstractRectangularFigure implements Figure{
 	 * @param g the graphics context to use for drawing.
 	 */
 	public void draw(Graphics g) {
-		Rectangle bounds = g.getClipBounds();
-		g.setColor(Color.WHITE);
-		g.fillRect(bounds.x, bounds.y, 
-				bounds.width, bounds.height);
-		g.setColor(Color.BLACK);
-		g.drawRect(bounds.x, bounds.y, 
-				bounds.width, bounds.height);
+		Rectangle r = getBounds(); 
+		g.setColor(Color.black); 
+		g.drawRect(r.x, r.y, r.width, r.height);
 	}
 	
 //	@Override

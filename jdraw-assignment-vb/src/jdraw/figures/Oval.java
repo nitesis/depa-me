@@ -67,7 +67,7 @@ public class Oval extends AbstractRectangularFigure {
 //	public void setBounds(Point origin, Point corner) {
 //
 //		oval.setFrameFromDiagonal(origin, corner);
-//		// XXX Notifikation eingentlich nur falls sich die Figur geändert hat.
+//		// XXX Notifikation eigentlich nur falls sich die Figur geändert hat.
 //		notifyListener(new FigureEvent(this));
 //	}
 //

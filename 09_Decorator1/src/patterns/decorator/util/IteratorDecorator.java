@@ -4,9 +4,8 @@ import java.util.Iterator;
 import java.util.function.Consumer;
 
 public class IteratorDecorator implements Iterator {
+	
 	private Iterator inner;
-	
-	
 	
 	public IteratorDecorator(Iterator inner) {
 		super();

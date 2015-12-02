@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 public class Collections{
 
 	static class CollectionDecorator implements Collection {
+		
 		private Collection inner;
 
 		public CollectionDecorator(Collection inner) {
@@ -30,7 +31,10 @@ public class Collections{
 		}
 
 		public Iterator iterator() {
-			return inner.iterator();
+			try {
+				return inner.iterator();
+			}catch (Exception e){}
+			throw new UnsupportedOperationException();
 		}
 
 		public Object[] toArray() {
@@ -83,6 +87,7 @@ public class Collections{
 		
 		
 	}
+	
 	public static <T> Collection<T> unmodifiableCollection(Collection<T> c) {
 		return new CollectionDecorator(c);
 	}

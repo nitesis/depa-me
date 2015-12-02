@@ -57,9 +57,6 @@ public abstract class AbstractRectangularFigure extends AbstractFigure {
 	}
 
 	@Override
-	public List<FigureHandle> getHandles() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public abstract List<FigureHandle> getHandles();
 
 }
