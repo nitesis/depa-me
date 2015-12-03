@@ -30,9 +30,9 @@ public class Collections{
 			return inner.contains(o);
 		}
 
-		public Iterator iterator() {
+		public IteratorDecorator iterator() {
 			try {
-				return inner.iterator();
+				return new IteratorDecorator(inner.iterator());
 			}catch (Exception e){}
 			throw new UnsupportedOperationException();
 		}
