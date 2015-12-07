@@ -6,17 +6,20 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 import jdraw.framework.DrawView;
 import jdraw.framework.Figure;
 import jdraw.framework.FigureHandle;
+import jdraw.framework.FigureListener;
 
-public class WestHandle implements FigureHandle{
+public class WestHandle extends AbstractFigureHandle{
 
 	private Figure owner; 
 	private Point corner;
 	
 	public WestHandle (Figure figure) {
+		super(figure);
 		owner = figure;
 	}
 	
@@ -70,6 +73,48 @@ public class WestHandle implements FigureHandle{
 	@Override
 	public void stopInteraction(int x, int y, MouseEvent e, DrawView v) {
 		corner = null;
+	}
+
+	@Override
+	public void move(int dx, int dy) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setBounds(Point origin, Point corner) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Rectangle getBounds() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<FigureHandle> getHandles() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addFigureListener(FigureListener listener) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeFigureListener(FigureListener listener) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Figure clone() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

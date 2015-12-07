@@ -88,8 +88,8 @@ public class Line extends AbstractFigure implements Figure {
 	@Override
 	public List<FigureHandle> getHandles() {
 		List<FigureHandle> handles = new LinkedList<>(); 
-		handles.add(new LineHandle1(this));
-		handles.add(new LineHandle2(this));
+		handles.add((FigureHandle) new LineHandle1(this));
+		handles.add((FigureHandle) new LineHandle2(this));
 		return handles;
 	}
 

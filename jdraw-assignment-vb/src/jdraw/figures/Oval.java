@@ -106,10 +106,10 @@ public class Oval extends AbstractRectangularFigure {
 	 */
 	public List<FigureHandle> getHandles() {
 		List<FigureHandle> handles = new LinkedList<>(); 
-		handles.add(new NorthHandle(this));
-		handles.add(new SouthHandle(this));
-		handles.add(new WestHandle(this));
-		handles.add(new EastHandle(this));
+		handles.add((FigureHandle) new NorthHandle(this));
+		handles.add((FigureHandle) new SouthHandle(this));
+		handles.add((FigureHandle) new WestHandle(this));
+		handles.add((FigureHandle) new EastHandle(this));
 		return handles;
 	}
 
