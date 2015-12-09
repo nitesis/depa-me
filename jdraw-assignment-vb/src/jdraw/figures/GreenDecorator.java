@@ -55,6 +55,7 @@ public class GreenDecorator implements Figure {
 
 	@Override
 	public List<FigureHandle> getHandles() {
+//		return new HandleDecorator();
 		return inner.getHandles();
 	}
 

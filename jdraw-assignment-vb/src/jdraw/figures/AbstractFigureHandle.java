@@ -6,8 +6,9 @@ import java.awt.event.MouseEvent;
 
 import jdraw.framework.DrawView;
 import jdraw.framework.Figure;
+import jdraw.framework.FigureHandle;
 
-public abstract class AbstractFigureHandle implements Figure {
+public abstract class AbstractFigureHandle implements FigureHandle {
 
 	Figure owner;
 	
