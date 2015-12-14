@@ -18,6 +18,7 @@ public abstract class AbstractFigureTest {
 //	abstract, damit die Unterklassen das sehen können
 	protected abstract Figure createFigure();
 	
+//	Hier @Before, weil diese Methode VOR Unittest ausgeführt wird
 	@Before
 //	Teil 1 vom FactoryPattern
 	public void setUp() {
