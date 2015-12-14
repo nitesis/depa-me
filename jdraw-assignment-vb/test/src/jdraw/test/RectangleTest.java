@@ -14,11 +14,14 @@ public class RectangleTest extends AbstractFigureTest{
 	
 
 	@Before
-	@Override
-	public void setUp() {
-		super.f = new jdraw.figures.Rect(0, 0, 20, 10);
-		super.cnt = 0;
+//	Teil 2 vom FactoryPattern
+	public Figure createFigure() {
+		return new jdraw.figures.Rect(0, 0, 20, 10);
 	}
+//	public void setUp() {
+//		super.f = new jdraw.figures.Rect(0, 0, 20, 10);
+//		super.cnt = 0;
+//	}
 
 //	@Test
 //	public void testNotification1() {

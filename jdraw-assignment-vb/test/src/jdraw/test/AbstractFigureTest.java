@@ -15,8 +15,15 @@ public abstract class AbstractFigureTest {
 	protected Figure f;
 	protected int cnt;
 	
+//	abstract, damit die Unterklassen das sehen können
+	protected abstract Figure createFigure();
+	
 	@Before
-	public abstract void setUp();
+//	Teil 1 vom FactoryPattern
+	public void setUp() {
+		f = createFigure();
+		cnt = 0;
+	}
 	
 	@Test
 	public void testNotification1() {
