@@ -14,7 +14,8 @@ import patterns.factory.gui.ComponentFactory.Frame;
 public class Gui02FactoryFixed {
 
 	public static void main(String[] args){
-		ComponentFactory componentFactory = new FactorySWT();
+//		ComponentFactory componentFactory = new FactorySWT();
+		ComponentFactory componentFactory = new FactoryFX();
 
 		Frame f = componentFactory.createFrame("Calculator");
 
